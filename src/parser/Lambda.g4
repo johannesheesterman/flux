@@ -4,9 +4,8 @@ prog
                 :       (stat (NEWLINE*|EOF))+;
 
 stat            
-                :       ID '=' value?                                         # assignmentStatement
-                |       ID obj?                                             # variableDeclarationStatement
-                |       COMMENT                                             # commentStatement
+                :       id '=' value                                            # assignmentStatement
+                |       COMMENT                                                 # commentStatement
                 ;     
 
 obj
@@ -15,12 +14,11 @@ obj
                 ;
 
 pair
-                :       MODIFIER? KEY '=' value ';'? (NEWLINE*)? 
+                :       KEY '=' value ';'? (NEWLINE*)? 
                 ;
 
 array
-                :       '[' value (',' value)* ']'
-                |       '[' ']'
+                :       '[' ( value ( ',' value )* )? ']'
                 ;
 
 value
@@ -48,14 +46,11 @@ fragment INT
                 :       '0' | [1-9] [0-9]*
                 ;
 
-ID              
+id              
                 :       '[' .+? ']';
 
 COMMENT         
                 :       '#' ~[\r\n]*;
-
-MODIFIER        
-                :       'public' | 'private';
 
 KEY
                 :       [a-zA-Z0-9]+;

@@ -35,8 +35,9 @@ func (this *LambdaVisitor) VisitProg(ctx *parser.ProgContext) {
 }
 
 func (this *LambdaVisitor) VisitAssignmentStatement(ctx *parser.AssignmentStatementContext) {
-	name := ctx.ID().GetText()
-	this.values[name] = this.VisitValue(ctx.Value().(*parser.ValueContext))
+	name := ctx.Id().GetText()
+	value := ctx.Value()
+	this.values[name] = this.VisitValue(value.(*parser.ValueContext))
 	fmt.Println("VisitAssignmentStatement", name, this.values[name])
 }
 
@@ -51,6 +52,17 @@ func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	if ctx.BOOLEAN() != nil {
 		return ctx.BOOLEAN().GetText() == "true"
 	}
+	if (ctx.Array()) != nil {
+		return this.VisitArray(ctx.Array().(*parser.ArrayContext))
+	}
 
 	return nil
+}
+
+func (this *LambdaVisitor) VisitArray(ctx *parser.ArrayContext) []interface{} {
+	var values []interface{}
+	for _, c := range ctx.AllValue() {
+		values = append(values, this.VisitValue(c.(*parser.ValueContext)))
+	}
+	return values
 }

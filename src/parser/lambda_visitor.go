@@ -14,9 +14,6 @@ type LambdaVisitor interface {
 	// Visit a parse tree produced by LambdaParser#assignmentStatement.
 	VisitAssignmentStatement(ctx *AssignmentStatementContext) interface{}
 
-	// Visit a parse tree produced by LambdaParser#variableDeclarationStatement.
-	VisitVariableDeclarationStatement(ctx *VariableDeclarationStatementContext) interface{}
-
 	// Visit a parse tree produced by LambdaParser#commentStatement.
 	VisitCommentStatement(ctx *CommentStatementContext) interface{}
 
@@ -31,4 +28,7 @@ type LambdaVisitor interface {
 
 	// Visit a parse tree produced by LambdaParser#value.
 	VisitValue(ctx *ValueContext) interface{}
+
+	// Visit a parse tree produced by LambdaParser#id.
+	VisitId(ctx *IdContext) interface{}
 }

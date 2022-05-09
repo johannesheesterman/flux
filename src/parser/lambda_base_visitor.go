@@ -16,10 +16,6 @@ func (v *BaseLambdaVisitor) VisitAssignmentStatement(ctx *AssignmentStatementCon
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitVariableDeclarationStatement(ctx *VariableDeclarationStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLambdaVisitor) VisitCommentStatement(ctx *CommentStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -37,5 +33,9 @@ func (v *BaseLambdaVisitor) VisitArray(ctx *ArrayContext) interface{} {
 }
 
 func (v *BaseLambdaVisitor) VisitValue(ctx *ValueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLambdaVisitor) VisitId(ctx *IdContext) interface{} {
 	return v.VisitChildren(ctx)
 }

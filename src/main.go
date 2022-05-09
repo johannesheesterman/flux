@@ -8,6 +8,9 @@ import (
 )
 
 func main() {
+	if len(os.Args) < 2 {
+		os.Args = append(os.Args, "test.lda")
+	}
 	input, _ := antlr.NewFileStream(os.Args[1])
 	lexer := parser.NewLambdaLexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)

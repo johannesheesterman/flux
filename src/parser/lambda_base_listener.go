@@ -33,14 +33,6 @@ func (s *BaseLambdaListener) EnterAssignmentStatement(ctx *AssignmentStatementCo
 // ExitAssignmentStatement is called when production assignmentStatement is exited.
 func (s *BaseLambdaListener) ExitAssignmentStatement(ctx *AssignmentStatementContext) {}
 
-// EnterVariableDeclarationStatement is called when production variableDeclarationStatement is entered.
-func (s *BaseLambdaListener) EnterVariableDeclarationStatement(ctx *VariableDeclarationStatementContext) {
-}
-
-// ExitVariableDeclarationStatement is called when production variableDeclarationStatement is exited.
-func (s *BaseLambdaListener) ExitVariableDeclarationStatement(ctx *VariableDeclarationStatementContext) {
-}
-
 // EnterCommentStatement is called when production commentStatement is entered.
 func (s *BaseLambdaListener) EnterCommentStatement(ctx *CommentStatementContext) {}
 
@@ -70,3 +62,9 @@ func (s *BaseLambdaListener) EnterValue(ctx *ValueContext) {}
 
 // ExitValue is called when production value is exited.
 func (s *BaseLambdaListener) ExitValue(ctx *ValueContext) {}
+
+// EnterId is called when production id is entered.
+func (s *BaseLambdaListener) EnterId(ctx *IdContext) {}
+
+// ExitId is called when production id is exited.
+func (s *BaseLambdaListener) ExitId(ctx *IdContext) {}
