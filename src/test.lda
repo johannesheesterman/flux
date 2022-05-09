@@ -1,2 +1,6 @@
 [a] = 123.456
-[array def] = [1, "ABC", true ]
+[array def] = [ 1, "ABC", true, [4,5,6] ]
+[obj] = { 
+    id = "test"; 
+    number = 789 
+};

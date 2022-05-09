@@ -55,6 +55,9 @@ func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	if (ctx.Array()) != nil {
 		return this.VisitArray(ctx.Array().(*parser.ArrayContext))
 	}
+	if (ctx.Obj()) != nil {
+		return this.VisitObj(ctx.Obj().(*parser.ObjContext))
+	}
 
 	return nil
 }
@@ -63,6 +66,15 @@ func (this *LambdaVisitor) VisitArray(ctx *parser.ArrayContext) []interface{} {
 	var values []interface{}
 	for _, c := range ctx.AllValue() {
 		values = append(values, this.VisitValue(c.(*parser.ValueContext)))
+	}
+	return values
+}
+
+func (this *LambdaVisitor) VisitObj(ctx *parser.ObjContext) map[string]interface{} {
+	values := make(map[string]interface{})
+	for _, c := range ctx.AllPair() {
+		pair := c.(*parser.PairContext)
+		values[pair.KEY().GetText()] = this.VisitValue(pair.Value().(*parser.ValueContext))
 	}
 	return values
 }

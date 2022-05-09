@@ -4,7 +4,7 @@ prog
                 :       (stat (NEWLINE*|EOF))+;
 
 stat            
-                :       id '=' value                                            # assignmentStatement
+                :       id '=' value ';'?                                       # assignmentStatement
                 |       COMMENT                                                 # commentStatement
                 ;     
 
