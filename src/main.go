@@ -15,5 +15,5 @@ func main() {
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	p.BuildParseTrees = true
 	tree := p.Prog()
-	new(LambdaVisitor).Visit(tree)
+	NewLambdaVistor().Visit(tree)
 }

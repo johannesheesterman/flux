@@ -62,7 +62,7 @@ func lambdaParserInit() {
 		1, 0, 0, 0, 18, 16, 1, 0, 0, 0, 19, 21, 5, 0, 0, 1, 20, 16, 1, 0, 0, 0,
 		20, 19, 1, 0, 0, 0, 21, 23, 1, 0, 0, 0, 22, 12, 1, 0, 0, 0, 23, 24, 1,
 		0, 0, 0, 24, 22, 1, 0, 0, 0, 24, 25, 1, 0, 0, 0, 25, 1, 1, 0, 0, 0, 26,
-		27, 5, 11, 0, 0, 27, 29, 5, 1, 0, 0, 28, 30, 3, 4, 2, 0, 29, 28, 1, 0,
+		27, 5, 11, 0, 0, 27, 29, 5, 1, 0, 0, 28, 30, 3, 10, 5, 0, 29, 28, 1, 0,
 		0, 0, 29, 30, 1, 0, 0, 0, 30, 37, 1, 0, 0, 0, 31, 33, 5, 11, 0, 0, 32,
 		34, 3, 4, 2, 0, 33, 32, 1, 0, 0, 0, 33, 34, 1, 0, 0, 0, 34, 37, 1, 0, 0,
 		0, 35, 37, 5, 12, 0, 0, 36, 26, 1, 0, 0, 0, 36, 31, 1, 0, 0, 0, 36, 35,
@@ -468,10 +468,10 @@ func (s *AssignmentStatementContext) ID() antlr.TerminalNode {
 	return s.GetToken(LambdaParserID, 0)
 }
 
-func (s *AssignmentStatementContext) Obj() IObjContext {
+func (s *AssignmentStatementContext) Value() IValueContext {
 	var t antlr.RuleContext
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IObjContext); ok {
+		if _, ok := ctx.(IValueContext); ok {
 			t = ctx.(antlr.RuleContext)
 			break
 		}
@@ -481,7 +481,7 @@ func (s *AssignmentStatementContext) Obj() IObjContext {
 		return nil
 	}
 
-	return t.(IObjContext)
+	return t.(IValueContext)
 }
 
 func (s *AssignmentStatementContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -608,10 +608,10 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == LambdaParserT__1 {
+		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__1)|(1<<LambdaParserT__4)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN))) != 0 {
 			{
 				p.SetState(28)
-				p.Obj()
+				p.Value()
 			}
 
 		}

@@ -191,8 +191,8 @@ public class LambdaParser extends Parser {
 	}
 	public static class AssignmentStatementContext extends StatContext {
 		public TerminalNode ID() { return getToken(LambdaParser.ID, 0); }
-		public ObjContext obj() {
-			return getRuleContext(ObjContext.class,0);
+		public ValueContext value() {
+			return getRuleContext(ValueContext.class,0);
 		}
 		public AssignmentStatementContext(StatContext ctx) { copyFrom(ctx); }
 	}
@@ -223,10 +223,10 @@ public class LambdaParser extends Parser {
 				setState(29);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==T__1) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__4) | (1L << STRING) | (1L << NUMBER) | (1L << BOOLEAN))) != 0)) {
 					{
 					setState(28);
-					obj();
+					value();
 					}
 				}
 
@@ -631,7 +631,7 @@ public class LambdaParser extends Parser {
 		"\3\2\2\2\22\20\3\2\2\2\22\23\3\2\2\2\23\27\3\2\2\2\24\22\3\2\2\2\25\27"+
 		"\7\2\2\3\26\22\3\2\2\2\26\25\3\2\2\2\27\31\3\2\2\2\30\16\3\2\2\2\31\32"+
 		"\3\2\2\2\32\30\3\2\2\2\32\33\3\2\2\2\33\3\3\2\2\2\34\35\7\r\2\2\35\37"+
-		"\7\3\2\2\36 \5\6\4\2\37\36\3\2\2\2\37 \3\2\2\2 \'\3\2\2\2!#\7\r\2\2\""+
+		"\7\3\2\2\36 \5\f\7\2\37\36\3\2\2\2\37 \3\2\2\2 \'\3\2\2\2!#\7\r\2\2\""+
 		"$\5\6\4\2#\"\3\2\2\2#$\3\2\2\2$\'\3\2\2\2%\'\7\16\2\2&\34\3\2\2\2&!\3"+
 		"\2\2\2&%\3\2\2\2\'\5\3\2\2\2(,\7\4\2\2)+\7\21\2\2*)\3\2\2\2+.\3\2\2\2"+
 		",*\3\2\2\2,-\3\2\2\2-/\3\2\2\2.,\3\2\2\2/9\5\b\5\2\60\62\7\21\2\2\61\60"+
