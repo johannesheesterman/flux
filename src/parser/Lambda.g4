@@ -14,12 +14,12 @@ func            :        KEY '(' ( value ( ',' value )* )? ')' ';'?
                 ;
 
 obj
-                :       '{' (NEWLINE)* pair ((NEWLINE)* pair)*  '}'
+                :       '{' (NEWLINE)* pair ((NEWLINE)* pair)* (NEWLINE)*  '}'
                 |       '{' (NEWLINE*) '}'
                 ;
 
 pair
-                :       KEY '=' value ';'? (NEWLINE*)? 
+                :       KEY '=' value ';'? 
                 ;
 
 array

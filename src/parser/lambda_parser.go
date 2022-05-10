@@ -44,61 +44,60 @@ func lambdaParserInit() {
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 17, 125, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 17, 123, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 1, 0, 1, 0, 5, 0, 17, 8, 0, 10, 0, 12, 0, 20,
 		9, 0, 1, 0, 3, 0, 23, 8, 0, 4, 0, 25, 8, 0, 11, 0, 12, 0, 26, 1, 1, 1,
 		1, 1, 1, 1, 1, 3, 1, 33, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 40,
 		8, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 2, 47, 8, 2, 10, 2, 12, 2, 50, 9,
 		2, 3, 2, 52, 8, 2, 1, 2, 1, 2, 3, 2, 56, 8, 2, 1, 3, 1, 3, 5, 3, 60, 8,
 		3, 10, 3, 12, 3, 63, 9, 3, 1, 3, 1, 3, 5, 3, 67, 8, 3, 10, 3, 12, 3, 70,
-		9, 3, 1, 3, 5, 3, 73, 8, 3, 10, 3, 12, 3, 76, 9, 3, 1, 3, 1, 3, 1, 3, 1,
-		3, 5, 3, 82, 8, 3, 10, 3, 12, 3, 85, 9, 3, 1, 3, 3, 3, 88, 8, 3, 1, 4,
-		1, 4, 1, 4, 1, 4, 3, 4, 94, 8, 4, 1, 4, 5, 4, 97, 8, 4, 10, 4, 12, 4, 100,
-		9, 4, 3, 4, 102, 8, 4, 1, 5, 1, 5, 1, 5, 1, 5, 5, 5, 108, 8, 5, 10, 5,
-		12, 5, 111, 9, 5, 3, 5, 113, 8, 5, 1, 5, 1, 5, 1, 6, 1, 6, 1, 6, 1, 6,
-		1, 6, 1, 6, 3, 6, 123, 8, 6, 1, 6, 0, 0, 7, 0, 2, 4, 6, 8, 10, 12, 0, 0,
-		142, 0, 24, 1, 0, 0, 0, 2, 39, 1, 0, 0, 0, 4, 41, 1, 0, 0, 0, 6, 87, 1,
-		0, 0, 0, 8, 89, 1, 0, 0, 0, 10, 103, 1, 0, 0, 0, 12, 122, 1, 0, 0, 0, 14,
-		22, 3, 2, 1, 0, 15, 17, 5, 16, 0, 0, 16, 15, 1, 0, 0, 0, 17, 20, 1, 0,
-		0, 0, 18, 16, 1, 0, 0, 0, 18, 19, 1, 0, 0, 0, 19, 23, 1, 0, 0, 0, 20, 18,
-		1, 0, 0, 0, 21, 23, 5, 0, 0, 1, 22, 18, 1, 0, 0, 0, 22, 21, 1, 0, 0, 0,
-		23, 25, 1, 0, 0, 0, 24, 14, 1, 0, 0, 0, 25, 26, 1, 0, 0, 0, 26, 24, 1,
-		0, 0, 0, 26, 27, 1, 0, 0, 0, 27, 1, 1, 0, 0, 0, 28, 29, 5, 13, 0, 0, 29,
-		30, 5, 1, 0, 0, 30, 32, 3, 12, 6, 0, 31, 33, 5, 2, 0, 0, 32, 31, 1, 0,
-		0, 0, 32, 33, 1, 0, 0, 0, 33, 40, 1, 0, 0, 0, 34, 35, 5, 13, 0, 0, 35,
-		36, 5, 1, 0, 0, 36, 40, 3, 4, 2, 0, 37, 40, 3, 4, 2, 0, 38, 40, 5, 14,
-		0, 0, 39, 28, 1, 0, 0, 0, 39, 34, 1, 0, 0, 0, 39, 37, 1, 0, 0, 0, 39, 38,
-		1, 0, 0, 0, 40, 3, 1, 0, 0, 0, 41, 42, 5, 15, 0, 0, 42, 51, 5, 3, 0, 0,
-		43, 48, 3, 12, 6, 0, 44, 45, 5, 4, 0, 0, 45, 47, 3, 12, 6, 0, 46, 44, 1,
-		0, 0, 0, 47, 50, 1, 0, 0, 0, 48, 46, 1, 0, 0, 0, 48, 49, 1, 0, 0, 0, 49,
-		52, 1, 0, 0, 0, 50, 48, 1, 0, 0, 0, 51, 43, 1, 0, 0, 0, 51, 52, 1, 0, 0,
-		0, 52, 53, 1, 0, 0, 0, 53, 55, 5, 5, 0, 0, 54, 56, 5, 2, 0, 0, 55, 54,
-		1, 0, 0, 0, 55, 56, 1, 0, 0, 0, 56, 5, 1, 0, 0, 0, 57, 61, 5, 6, 0, 0,
-		58, 60, 5, 16, 0, 0, 59, 58, 1, 0, 0, 0, 60, 63, 1, 0, 0, 0, 61, 59, 1,
-		0, 0, 0, 61, 62, 1, 0, 0, 0, 62, 64, 1, 0, 0, 0, 63, 61, 1, 0, 0, 0, 64,
-		74, 3, 8, 4, 0, 65, 67, 5, 16, 0, 0, 66, 65, 1, 0, 0, 0, 67, 70, 1, 0,
-		0, 0, 68, 66, 1, 0, 0, 0, 68, 69, 1, 0, 0, 0, 69, 71, 1, 0, 0, 0, 70, 68,
-		1, 0, 0, 0, 71, 73, 3, 8, 4, 0, 72, 68, 1, 0, 0, 0, 73, 76, 1, 0, 0, 0,
-		74, 72, 1, 0, 0, 0, 74, 75, 1, 0, 0, 0, 75, 77, 1, 0, 0, 0, 76, 74, 1,
-		0, 0, 0, 77, 78, 5, 7, 0, 0, 78, 88, 1, 0, 0, 0, 79, 83, 5, 6, 0, 0, 80,
-		82, 5, 16, 0, 0, 81, 80, 1, 0, 0, 0, 82, 85, 1, 0, 0, 0, 83, 81, 1, 0,
-		0, 0, 83, 84, 1, 0, 0, 0, 84, 86, 1, 0, 0, 0, 85, 83, 1, 0, 0, 0, 86, 88,
-		5, 7, 0, 0, 87, 57, 1, 0, 0, 0, 87, 79, 1, 0, 0, 0, 88, 7, 1, 0, 0, 0,
-		89, 90, 5, 15, 0, 0, 90, 91, 5, 1, 0, 0, 91, 93, 3, 12, 6, 0, 92, 94, 5,
-		2, 0, 0, 93, 92, 1, 0, 0, 0, 93, 94, 1, 0, 0, 0, 94, 101, 1, 0, 0, 0, 95,
-		97, 5, 16, 0, 0, 96, 95, 1, 0, 0, 0, 97, 100, 1, 0, 0, 0, 98, 96, 1, 0,
-		0, 0, 98, 99, 1, 0, 0, 0, 99, 102, 1, 0, 0, 0, 100, 98, 1, 0, 0, 0, 101,
-		98, 1, 0, 0, 0, 101, 102, 1, 0, 0, 0, 102, 9, 1, 0, 0, 0, 103, 112, 5,
-		8, 0, 0, 104, 109, 3, 12, 6, 0, 105, 106, 5, 4, 0, 0, 106, 108, 3, 12,
-		6, 0, 107, 105, 1, 0, 0, 0, 108, 111, 1, 0, 0, 0, 109, 107, 1, 0, 0, 0,
-		109, 110, 1, 0, 0, 0, 110, 113, 1, 0, 0, 0, 111, 109, 1, 0, 0, 0, 112,
-		104, 1, 0, 0, 0, 112, 113, 1, 0, 0, 0, 113, 114, 1, 0, 0, 0, 114, 115,
-		5, 9, 0, 0, 115, 11, 1, 0, 0, 0, 116, 123, 5, 10, 0, 0, 117, 123, 5, 11,
-		0, 0, 118, 123, 5, 12, 0, 0, 119, 123, 5, 13, 0, 0, 120, 123, 3, 6, 3,
-		0, 121, 123, 3, 10, 5, 0, 122, 116, 1, 0, 0, 0, 122, 117, 1, 0, 0, 0, 122,
-		118, 1, 0, 0, 0, 122, 119, 1, 0, 0, 0, 122, 120, 1, 0, 0, 0, 122, 121,
-		1, 0, 0, 0, 123, 13, 1, 0, 0, 0, 19, 18, 22, 26, 32, 39, 48, 51, 55, 61,
-		68, 74, 83, 87, 93, 98, 101, 109, 112, 122,
+		9, 3, 1, 3, 5, 3, 73, 8, 3, 10, 3, 12, 3, 76, 9, 3, 1, 3, 5, 3, 79, 8,
+		3, 10, 3, 12, 3, 82, 9, 3, 1, 3, 1, 3, 1, 3, 1, 3, 5, 3, 88, 8, 3, 10,
+		3, 12, 3, 91, 9, 3, 1, 3, 3, 3, 94, 8, 3, 1, 4, 1, 4, 1, 4, 1, 4, 3, 4,
+		100, 8, 4, 1, 5, 1, 5, 1, 5, 1, 5, 5, 5, 106, 8, 5, 10, 5, 12, 5, 109,
+		9, 5, 3, 5, 111, 8, 5, 1, 5, 1, 5, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6,
+		3, 6, 121, 8, 6, 1, 6, 0, 0, 7, 0, 2, 4, 6, 8, 10, 12, 0, 0, 139, 0, 24,
+		1, 0, 0, 0, 2, 39, 1, 0, 0, 0, 4, 41, 1, 0, 0, 0, 6, 93, 1, 0, 0, 0, 8,
+		95, 1, 0, 0, 0, 10, 101, 1, 0, 0, 0, 12, 120, 1, 0, 0, 0, 14, 22, 3, 2,
+		1, 0, 15, 17, 5, 16, 0, 0, 16, 15, 1, 0, 0, 0, 17, 20, 1, 0, 0, 0, 18,
+		16, 1, 0, 0, 0, 18, 19, 1, 0, 0, 0, 19, 23, 1, 0, 0, 0, 20, 18, 1, 0, 0,
+		0, 21, 23, 5, 0, 0, 1, 22, 18, 1, 0, 0, 0, 22, 21, 1, 0, 0, 0, 23, 25,
+		1, 0, 0, 0, 24, 14, 1, 0, 0, 0, 25, 26, 1, 0, 0, 0, 26, 24, 1, 0, 0, 0,
+		26, 27, 1, 0, 0, 0, 27, 1, 1, 0, 0, 0, 28, 29, 5, 13, 0, 0, 29, 30, 5,
+		1, 0, 0, 30, 32, 3, 12, 6, 0, 31, 33, 5, 2, 0, 0, 32, 31, 1, 0, 0, 0, 32,
+		33, 1, 0, 0, 0, 33, 40, 1, 0, 0, 0, 34, 35, 5, 13, 0, 0, 35, 36, 5, 1,
+		0, 0, 36, 40, 3, 4, 2, 0, 37, 40, 3, 4, 2, 0, 38, 40, 5, 14, 0, 0, 39,
+		28, 1, 0, 0, 0, 39, 34, 1, 0, 0, 0, 39, 37, 1, 0, 0, 0, 39, 38, 1, 0, 0,
+		0, 40, 3, 1, 0, 0, 0, 41, 42, 5, 15, 0, 0, 42, 51, 5, 3, 0, 0, 43, 48,
+		3, 12, 6, 0, 44, 45, 5, 4, 0, 0, 45, 47, 3, 12, 6, 0, 46, 44, 1, 0, 0,
+		0, 47, 50, 1, 0, 0, 0, 48, 46, 1, 0, 0, 0, 48, 49, 1, 0, 0, 0, 49, 52,
+		1, 0, 0, 0, 50, 48, 1, 0, 0, 0, 51, 43, 1, 0, 0, 0, 51, 52, 1, 0, 0, 0,
+		52, 53, 1, 0, 0, 0, 53, 55, 5, 5, 0, 0, 54, 56, 5, 2, 0, 0, 55, 54, 1,
+		0, 0, 0, 55, 56, 1, 0, 0, 0, 56, 5, 1, 0, 0, 0, 57, 61, 5, 6, 0, 0, 58,
+		60, 5, 16, 0, 0, 59, 58, 1, 0, 0, 0, 60, 63, 1, 0, 0, 0, 61, 59, 1, 0,
+		0, 0, 61, 62, 1, 0, 0, 0, 62, 64, 1, 0, 0, 0, 63, 61, 1, 0, 0, 0, 64, 74,
+		3, 8, 4, 0, 65, 67, 5, 16, 0, 0, 66, 65, 1, 0, 0, 0, 67, 70, 1, 0, 0, 0,
+		68, 66, 1, 0, 0, 0, 68, 69, 1, 0, 0, 0, 69, 71, 1, 0, 0, 0, 70, 68, 1,
+		0, 0, 0, 71, 73, 3, 8, 4, 0, 72, 68, 1, 0, 0, 0, 73, 76, 1, 0, 0, 0, 74,
+		72, 1, 0, 0, 0, 74, 75, 1, 0, 0, 0, 75, 80, 1, 0, 0, 0, 76, 74, 1, 0, 0,
+		0, 77, 79, 5, 16, 0, 0, 78, 77, 1, 0, 0, 0, 79, 82, 1, 0, 0, 0, 80, 78,
+		1, 0, 0, 0, 80, 81, 1, 0, 0, 0, 81, 83, 1, 0, 0, 0, 82, 80, 1, 0, 0, 0,
+		83, 84, 5, 7, 0, 0, 84, 94, 1, 0, 0, 0, 85, 89, 5, 6, 0, 0, 86, 88, 5,
+		16, 0, 0, 87, 86, 1, 0, 0, 0, 88, 91, 1, 0, 0, 0, 89, 87, 1, 0, 0, 0, 89,
+		90, 1, 0, 0, 0, 90, 92, 1, 0, 0, 0, 91, 89, 1, 0, 0, 0, 92, 94, 5, 7, 0,
+		0, 93, 57, 1, 0, 0, 0, 93, 85, 1, 0, 0, 0, 94, 7, 1, 0, 0, 0, 95, 96, 5,
+		15, 0, 0, 96, 97, 5, 1, 0, 0, 97, 99, 3, 12, 6, 0, 98, 100, 5, 2, 0, 0,
+		99, 98, 1, 0, 0, 0, 99, 100, 1, 0, 0, 0, 100, 9, 1, 0, 0, 0, 101, 110,
+		5, 8, 0, 0, 102, 107, 3, 12, 6, 0, 103, 104, 5, 4, 0, 0, 104, 106, 3, 12,
+		6, 0, 105, 103, 1, 0, 0, 0, 106, 109, 1, 0, 0, 0, 107, 105, 1, 0, 0, 0,
+		107, 108, 1, 0, 0, 0, 108, 111, 1, 0, 0, 0, 109, 107, 1, 0, 0, 0, 110,
+		102, 1, 0, 0, 0, 110, 111, 1, 0, 0, 0, 111, 112, 1, 0, 0, 0, 112, 113,
+		5, 9, 0, 0, 113, 11, 1, 0, 0, 0, 114, 121, 5, 10, 0, 0, 115, 121, 5, 11,
+		0, 0, 116, 121, 5, 12, 0, 0, 117, 121, 5, 13, 0, 0, 118, 121, 3, 6, 3,
+		0, 119, 121, 3, 10, 5, 0, 120, 114, 1, 0, 0, 0, 120, 115, 1, 0, 0, 0, 120,
+		116, 1, 0, 0, 0, 120, 117, 1, 0, 0, 0, 120, 118, 1, 0, 0, 0, 120, 119,
+		1, 0, 0, 0, 121, 13, 1, 0, 0, 0, 18, 18, 22, 26, 32, 39, 48, 51, 55, 61,
+		68, 74, 80, 89, 93, 99, 107, 110, 120,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -1057,9 +1056,11 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		}
 	}()
 
-	p.SetState(87)
+	var _alt int
+
+	p.SetState(93)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 12, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 13, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
@@ -1086,61 +1087,77 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		}
 		p.SetState(74)
 		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
 
-		for _la == LambdaParserKEY || _la == LambdaParserNEWLINE {
-			p.SetState(68)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
-
-			for _la == LambdaParserNEWLINE {
-				{
-					p.SetState(65)
-					p.Match(LambdaParserNEWLINE)
-				}
-
-				p.SetState(70)
+		for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+			if _alt == 1 {
+				p.SetState(68)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
+
+				for _la == LambdaParserNEWLINE {
+					{
+						p.SetState(65)
+						p.Match(LambdaParserNEWLINE)
+					}
+
+					p.SetState(70)
+					p.GetErrorHandler().Sync(p)
+					_la = p.GetTokenStream().LA(1)
+				}
+				{
+					p.SetState(71)
+					p.Pair()
+				}
+
 			}
+			p.SetState(76)
+			p.GetErrorHandler().Sync(p)
+			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
+		}
+		p.SetState(80)
+		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
+
+		for _la == LambdaParserNEWLINE {
 			{
-				p.SetState(71)
-				p.Pair()
+				p.SetState(77)
+				p.Match(LambdaParserNEWLINE)
 			}
 
-			p.SetState(76)
+			p.SetState(82)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(77)
+			p.SetState(83)
 			p.Match(LambdaParserT__6)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(79)
+			p.SetState(85)
 			p.Match(LambdaParserT__5)
 		}
 
-		p.SetState(83)
+		p.SetState(89)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserNEWLINE {
 			{
-				p.SetState(80)
+				p.SetState(86)
 				p.Match(LambdaParserNEWLINE)
 			}
 
-			p.SetState(85)
+			p.SetState(91)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 		{
-			p.SetState(86)
+			p.SetState(92)
 			p.Match(LambdaParserT__6)
 		}
 
@@ -1207,14 +1224,6 @@ func (s *PairContext) Value() IValueContext {
 	return t.(IValueContext)
 }
 
-func (s *PairContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(LambdaParserNEWLINE)
-}
-
-func (s *PairContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(LambdaParserNEWLINE, i)
-}
-
 func (s *PairContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -1269,51 +1278,27 @@ func (p *LambdaParser) Pair() (localctx IPairContext) {
 		}
 	}()
 
-	var _alt int
-
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(89)
+		p.SetState(95)
 		p.Match(LambdaParserKEY)
 	}
 	{
-		p.SetState(90)
+		p.SetState(96)
 		p.Match(LambdaParserT__0)
 	}
 	{
-		p.SetState(91)
+		p.SetState(97)
 		p.Value()
 	}
-	p.SetState(93)
+	p.SetState(99)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == LambdaParserT__1 {
 		{
-			p.SetState(92)
+			p.SetState(98)
 			p.Match(LambdaParserT__1)
-		}
-
-	}
-	p.SetState(101)
-	p.GetErrorHandler().Sync(p)
-
-	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 15, p.GetParserRuleContext()) == 1 {
-		p.SetState(98)
-		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
-
-		for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
-			if _alt == 1 {
-				{
-					p.SetState(95)
-					p.Match(LambdaParserNEWLINE)
-				}
-
-			}
-			p.SetState(100)
-			p.GetErrorHandler().Sync(p)
-			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
 		}
 
 	}
@@ -1456,40 +1441,40 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(103)
+		p.SetState(101)
 		p.Match(LambdaParserT__7)
 	}
-	p.SetState(112)
+	p.SetState(110)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN)|(1<<LambdaParserID))) != 0 {
 		{
-			p.SetState(104)
+			p.SetState(102)
 			p.Value()
 		}
-		p.SetState(109)
+		p.SetState(107)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserT__3 {
 			{
-				p.SetState(105)
+				p.SetState(103)
 				p.Match(LambdaParserT__3)
 			}
 			{
-				p.SetState(106)
+				p.SetState(104)
 				p.Value()
 			}
 
-			p.SetState(111)
+			p.SetState(109)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 	}
 	{
-		p.SetState(114)
+		p.SetState(112)
 		p.Match(LambdaParserT__8)
 	}
 
@@ -1635,49 +1620,49 @@ func (p *LambdaParser) Value() (localctx IValueContext) {
 		}
 	}()
 
-	p.SetState(122)
+	p.SetState(120)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case LambdaParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(116)
+			p.SetState(114)
 			p.Match(LambdaParserSTRING)
 		}
 
 	case LambdaParserNUMBER:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(117)
+			p.SetState(115)
 			p.Match(LambdaParserNUMBER)
 		}
 
 	case LambdaParserBOOLEAN:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(118)
+			p.SetState(116)
 			p.Match(LambdaParserBOOLEAN)
 		}
 
 	case LambdaParserID:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(119)
+			p.SetState(117)
 			p.Match(LambdaParserID)
 		}
 
 	case LambdaParserT__5:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(120)
+			p.SetState(118)
 			p.Obj()
 		}
 
 	case LambdaParserT__7:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(121)
+			p.SetState(119)
 			p.Array()
 		}
 
