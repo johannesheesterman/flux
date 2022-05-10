@@ -33,6 +33,14 @@ func (s *BaseLambdaListener) EnterAssignmentStatement(ctx *AssignmentStatementCo
 // ExitAssignmentStatement is called when production assignmentStatement is exited.
 func (s *BaseLambdaListener) ExitAssignmentStatement(ctx *AssignmentStatementContext) {}
 
+// EnterFunctionCallAssignmentStatement is called when production functionCallAssignmentStatement is entered.
+func (s *BaseLambdaListener) EnterFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
+}
+
+// ExitFunctionCallAssignmentStatement is called when production functionCallAssignmentStatement is exited.
+func (s *BaseLambdaListener) ExitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
+}
+
 // EnterFunctionCallStatement is called when production functionCallStatement is entered.
 func (s *BaseLambdaListener) EnterFunctionCallStatement(ctx *FunctionCallStatementContext) {}
 
@@ -44,6 +52,12 @@ func (s *BaseLambdaListener) EnterCommentStatement(ctx *CommentStatementContext)
 
 // ExitCommentStatement is called when production commentStatement is exited.
 func (s *BaseLambdaListener) ExitCommentStatement(ctx *CommentStatementContext) {}
+
+// EnterFunc is called when production func is entered.
+func (s *BaseLambdaListener) EnterFunc(ctx *FuncContext) {}
+
+// ExitFunc is called when production func is exited.
+func (s *BaseLambdaListener) ExitFunc(ctx *FuncContext) {}
 
 // EnterObj is called when production obj is entered.
 func (s *BaseLambdaListener) EnterObj(ctx *ObjContext) {}

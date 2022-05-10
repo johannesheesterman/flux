@@ -5,9 +5,13 @@ prog
 
 stat            
                 :       ID '=' value ';'?                                       # assignmentStatement
-                |       ID '=' KEY '(' ( value ( ',' value )* )? ')' ';'?       # functionCallStatement
+                |       ID '=' func                                             # functionCallAssignmentStatement
+                |       func                                                    # functionCallStatement
                 |       COMMENT                                                 # commentStatement
                 ;     
+
+func            :        KEY '(' ( value ( ',' value )* )? ')' ';'? 
+                ;
 
 obj
                 :       '{' (NEWLINE)* pair ((NEWLINE)* pair)*  '}'
@@ -26,6 +30,7 @@ value
                 :       STRING
                 |       NUMBER
                 |       BOOLEAN
+                |       ID
                 |       obj
                 |       array
                 ;

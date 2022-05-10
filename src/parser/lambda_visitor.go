@@ -14,11 +14,17 @@ type LambdaVisitor interface {
 	// Visit a parse tree produced by LambdaParser#assignmentStatement.
 	VisitAssignmentStatement(ctx *AssignmentStatementContext) interface{}
 
+	// Visit a parse tree produced by LambdaParser#functionCallAssignmentStatement.
+	VisitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) interface{}
+
 	// Visit a parse tree produced by LambdaParser#functionCallStatement.
 	VisitFunctionCallStatement(ctx *FunctionCallStatementContext) interface{}
 
 	// Visit a parse tree produced by LambdaParser#commentStatement.
 	VisitCommentStatement(ctx *CommentStatementContext) interface{}
+
+	// Visit a parse tree produced by LambdaParser#func.
+	VisitFunc(ctx *FuncContext) interface{}
 
 	// Visit a parse tree produced by LambdaParser#obj.
 	VisitObj(ctx *ObjContext) interface{}

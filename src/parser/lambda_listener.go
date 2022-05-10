@@ -14,11 +14,17 @@ type LambdaListener interface {
 	// EnterAssignmentStatement is called when entering the assignmentStatement production.
 	EnterAssignmentStatement(c *AssignmentStatementContext)
 
+	// EnterFunctionCallAssignmentStatement is called when entering the functionCallAssignmentStatement production.
+	EnterFunctionCallAssignmentStatement(c *FunctionCallAssignmentStatementContext)
+
 	// EnterFunctionCallStatement is called when entering the functionCallStatement production.
 	EnterFunctionCallStatement(c *FunctionCallStatementContext)
 
 	// EnterCommentStatement is called when entering the commentStatement production.
 	EnterCommentStatement(c *CommentStatementContext)
+
+	// EnterFunc is called when entering the func production.
+	EnterFunc(c *FuncContext)
 
 	// EnterObj is called when entering the obj production.
 	EnterObj(c *ObjContext)
@@ -38,11 +44,17 @@ type LambdaListener interface {
 	// ExitAssignmentStatement is called when exiting the assignmentStatement production.
 	ExitAssignmentStatement(c *AssignmentStatementContext)
 
+	// ExitFunctionCallAssignmentStatement is called when exiting the functionCallAssignmentStatement production.
+	ExitFunctionCallAssignmentStatement(c *FunctionCallAssignmentStatementContext)
+
 	// ExitFunctionCallStatement is called when exiting the functionCallStatement production.
 	ExitFunctionCallStatement(c *FunctionCallStatementContext)
 
 	// ExitCommentStatement is called when exiting the commentStatement production.
 	ExitCommentStatement(c *CommentStatementContext)
+
+	// ExitFunc is called when exiting the func production.
+	ExitFunc(c *FuncContext)
 
 	// ExitObj is called when exiting the obj production.
 	ExitObj(c *ObjContext)

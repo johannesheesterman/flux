@@ -16,11 +16,19 @@ func (v *BaseLambdaVisitor) VisitAssignmentStatement(ctx *AssignmentStatementCon
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLambdaVisitor) VisitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLambdaVisitor) VisitFunctionCallStatement(ctx *FunctionCallStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseLambdaVisitor) VisitCommentStatement(ctx *CommentStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLambdaVisitor) VisitFunc(ctx *FuncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

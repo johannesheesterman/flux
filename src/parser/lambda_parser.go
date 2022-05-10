@@ -40,63 +40,65 @@ func lambdaParserInit() {
 		"ID", "COMMENT", "KEY", "NEWLINE", "WS",
 	}
 	staticData.ruleNames = []string{
-		"prog", "stat", "obj", "pair", "array", "value",
+		"prog", "stat", "func", "obj", "pair", "array", "value",
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 17, 120, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
-		4, 2, 5, 7, 5, 1, 0, 1, 0, 5, 0, 15, 8, 0, 10, 0, 12, 0, 18, 9, 0, 1, 0,
-		3, 0, 21, 8, 0, 4, 0, 23, 8, 0, 11, 0, 12, 0, 24, 1, 1, 1, 1, 1, 1, 1,
-		1, 3, 1, 31, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 40,
-		8, 1, 10, 1, 12, 1, 43, 9, 1, 3, 1, 45, 8, 1, 1, 1, 1, 1, 3, 1, 49, 8,
-		1, 1, 1, 3, 1, 52, 8, 1, 1, 2, 1, 2, 5, 2, 56, 8, 2, 10, 2, 12, 2, 59,
-		9, 2, 1, 2, 1, 2, 5, 2, 63, 8, 2, 10, 2, 12, 2, 66, 9, 2, 1, 2, 5, 2, 69,
-		8, 2, 10, 2, 12, 2, 72, 9, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 2, 78, 8, 2, 10,
-		2, 12, 2, 81, 9, 2, 1, 2, 3, 2, 84, 8, 2, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3,
-		90, 8, 3, 1, 3, 5, 3, 93, 8, 3, 10, 3, 12, 3, 96, 9, 3, 3, 3, 98, 8, 3,
-		1, 4, 1, 4, 1, 4, 1, 4, 5, 4, 104, 8, 4, 10, 4, 12, 4, 107, 9, 4, 3, 4,
-		109, 8, 4, 1, 4, 1, 4, 1, 5, 1, 5, 1, 5, 1, 5, 1, 5, 3, 5, 118, 8, 5, 1,
-		5, 0, 0, 6, 0, 2, 4, 6, 8, 10, 0, 0, 136, 0, 22, 1, 0, 0, 0, 2, 51, 1,
-		0, 0, 0, 4, 83, 1, 0, 0, 0, 6, 85, 1, 0, 0, 0, 8, 99, 1, 0, 0, 0, 10, 117,
-		1, 0, 0, 0, 12, 20, 3, 2, 1, 0, 13, 15, 5, 16, 0, 0, 14, 13, 1, 0, 0, 0,
-		15, 18, 1, 0, 0, 0, 16, 14, 1, 0, 0, 0, 16, 17, 1, 0, 0, 0, 17, 21, 1,
-		0, 0, 0, 18, 16, 1, 0, 0, 0, 19, 21, 5, 0, 0, 1, 20, 16, 1, 0, 0, 0, 20,
-		19, 1, 0, 0, 0, 21, 23, 1, 0, 0, 0, 22, 12, 1, 0, 0, 0, 23, 24, 1, 0, 0,
-		0, 24, 22, 1, 0, 0, 0, 24, 25, 1, 0, 0, 0, 25, 1, 1, 0, 0, 0, 26, 27, 5,
-		13, 0, 0, 27, 28, 5, 1, 0, 0, 28, 30, 3, 10, 5, 0, 29, 31, 5, 2, 0, 0,
-		30, 29, 1, 0, 0, 0, 30, 31, 1, 0, 0, 0, 31, 52, 1, 0, 0, 0, 32, 33, 5,
-		13, 0, 0, 33, 34, 5, 1, 0, 0, 34, 35, 5, 15, 0, 0, 35, 44, 5, 3, 0, 0,
-		36, 41, 3, 10, 5, 0, 37, 38, 5, 4, 0, 0, 38, 40, 3, 10, 5, 0, 39, 37, 1,
-		0, 0, 0, 40, 43, 1, 0, 0, 0, 41, 39, 1, 0, 0, 0, 41, 42, 1, 0, 0, 0, 42,
-		45, 1, 0, 0, 0, 43, 41, 1, 0, 0, 0, 44, 36, 1, 0, 0, 0, 44, 45, 1, 0, 0,
-		0, 45, 46, 1, 0, 0, 0, 46, 48, 5, 5, 0, 0, 47, 49, 5, 2, 0, 0, 48, 47,
-		1, 0, 0, 0, 48, 49, 1, 0, 0, 0, 49, 52, 1, 0, 0, 0, 50, 52, 5, 14, 0, 0,
-		51, 26, 1, 0, 0, 0, 51, 32, 1, 0, 0, 0, 51, 50, 1, 0, 0, 0, 52, 3, 1, 0,
-		0, 0, 53, 57, 5, 6, 0, 0, 54, 56, 5, 16, 0, 0, 55, 54, 1, 0, 0, 0, 56,
-		59, 1, 0, 0, 0, 57, 55, 1, 0, 0, 0, 57, 58, 1, 0, 0, 0, 58, 60, 1, 0, 0,
-		0, 59, 57, 1, 0, 0, 0, 60, 70, 3, 6, 3, 0, 61, 63, 5, 16, 0, 0, 62, 61,
-		1, 0, 0, 0, 63, 66, 1, 0, 0, 0, 64, 62, 1, 0, 0, 0, 64, 65, 1, 0, 0, 0,
-		65, 67, 1, 0, 0, 0, 66, 64, 1, 0, 0, 0, 67, 69, 3, 6, 3, 0, 68, 64, 1,
-		0, 0, 0, 69, 72, 1, 0, 0, 0, 70, 68, 1, 0, 0, 0, 70, 71, 1, 0, 0, 0, 71,
-		73, 1, 0, 0, 0, 72, 70, 1, 0, 0, 0, 73, 74, 5, 7, 0, 0, 74, 84, 1, 0, 0,
-		0, 75, 79, 5, 6, 0, 0, 76, 78, 5, 16, 0, 0, 77, 76, 1, 0, 0, 0, 78, 81,
-		1, 0, 0, 0, 79, 77, 1, 0, 0, 0, 79, 80, 1, 0, 0, 0, 80, 82, 1, 0, 0, 0,
-		81, 79, 1, 0, 0, 0, 82, 84, 5, 7, 0, 0, 83, 53, 1, 0, 0, 0, 83, 75, 1,
-		0, 0, 0, 84, 5, 1, 0, 0, 0, 85, 86, 5, 15, 0, 0, 86, 87, 5, 1, 0, 0, 87,
-		89, 3, 10, 5, 0, 88, 90, 5, 2, 0, 0, 89, 88, 1, 0, 0, 0, 89, 90, 1, 0,
-		0, 0, 90, 97, 1, 0, 0, 0, 91, 93, 5, 16, 0, 0, 92, 91, 1, 0, 0, 0, 93,
-		96, 1, 0, 0, 0, 94, 92, 1, 0, 0, 0, 94, 95, 1, 0, 0, 0, 95, 98, 1, 0, 0,
-		0, 96, 94, 1, 0, 0, 0, 97, 94, 1, 0, 0, 0, 97, 98, 1, 0, 0, 0, 98, 7, 1,
-		0, 0, 0, 99, 108, 5, 8, 0, 0, 100, 105, 3, 10, 5, 0, 101, 102, 5, 4, 0,
-		0, 102, 104, 3, 10, 5, 0, 103, 101, 1, 0, 0, 0, 104, 107, 1, 0, 0, 0, 105,
-		103, 1, 0, 0, 0, 105, 106, 1, 0, 0, 0, 106, 109, 1, 0, 0, 0, 107, 105,
-		1, 0, 0, 0, 108, 100, 1, 0, 0, 0, 108, 109, 1, 0, 0, 0, 109, 110, 1, 0,
-		0, 0, 110, 111, 5, 9, 0, 0, 111, 9, 1, 0, 0, 0, 112, 118, 5, 10, 0, 0,
-		113, 118, 5, 11, 0, 0, 114, 118, 5, 12, 0, 0, 115, 118, 3, 4, 2, 0, 116,
-		118, 3, 8, 4, 0, 117, 112, 1, 0, 0, 0, 117, 113, 1, 0, 0, 0, 117, 114,
-		1, 0, 0, 0, 117, 115, 1, 0, 0, 0, 117, 116, 1, 0, 0, 0, 118, 11, 1, 0,
-		0, 0, 19, 16, 20, 24, 30, 41, 44, 48, 51, 57, 64, 70, 79, 83, 89, 94, 97,
-		105, 108, 117,
+		4, 1, 17, 125, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 2, 5, 7, 5, 2, 6, 7, 6, 1, 0, 1, 0, 5, 0, 17, 8, 0, 10, 0, 12, 0, 20,
+		9, 0, 1, 0, 3, 0, 23, 8, 0, 4, 0, 25, 8, 0, 11, 0, 12, 0, 26, 1, 1, 1,
+		1, 1, 1, 1, 1, 3, 1, 33, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 40,
+		8, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 2, 47, 8, 2, 10, 2, 12, 2, 50, 9,
+		2, 3, 2, 52, 8, 2, 1, 2, 1, 2, 3, 2, 56, 8, 2, 1, 3, 1, 3, 5, 3, 60, 8,
+		3, 10, 3, 12, 3, 63, 9, 3, 1, 3, 1, 3, 5, 3, 67, 8, 3, 10, 3, 12, 3, 70,
+		9, 3, 1, 3, 5, 3, 73, 8, 3, 10, 3, 12, 3, 76, 9, 3, 1, 3, 1, 3, 1, 3, 1,
+		3, 5, 3, 82, 8, 3, 10, 3, 12, 3, 85, 9, 3, 1, 3, 3, 3, 88, 8, 3, 1, 4,
+		1, 4, 1, 4, 1, 4, 3, 4, 94, 8, 4, 1, 4, 5, 4, 97, 8, 4, 10, 4, 12, 4, 100,
+		9, 4, 3, 4, 102, 8, 4, 1, 5, 1, 5, 1, 5, 1, 5, 5, 5, 108, 8, 5, 10, 5,
+		12, 5, 111, 9, 5, 3, 5, 113, 8, 5, 1, 5, 1, 5, 1, 6, 1, 6, 1, 6, 1, 6,
+		1, 6, 1, 6, 3, 6, 123, 8, 6, 1, 6, 0, 0, 7, 0, 2, 4, 6, 8, 10, 12, 0, 0,
+		142, 0, 24, 1, 0, 0, 0, 2, 39, 1, 0, 0, 0, 4, 41, 1, 0, 0, 0, 6, 87, 1,
+		0, 0, 0, 8, 89, 1, 0, 0, 0, 10, 103, 1, 0, 0, 0, 12, 122, 1, 0, 0, 0, 14,
+		22, 3, 2, 1, 0, 15, 17, 5, 16, 0, 0, 16, 15, 1, 0, 0, 0, 17, 20, 1, 0,
+		0, 0, 18, 16, 1, 0, 0, 0, 18, 19, 1, 0, 0, 0, 19, 23, 1, 0, 0, 0, 20, 18,
+		1, 0, 0, 0, 21, 23, 5, 0, 0, 1, 22, 18, 1, 0, 0, 0, 22, 21, 1, 0, 0, 0,
+		23, 25, 1, 0, 0, 0, 24, 14, 1, 0, 0, 0, 25, 26, 1, 0, 0, 0, 26, 24, 1,
+		0, 0, 0, 26, 27, 1, 0, 0, 0, 27, 1, 1, 0, 0, 0, 28, 29, 5, 13, 0, 0, 29,
+		30, 5, 1, 0, 0, 30, 32, 3, 12, 6, 0, 31, 33, 5, 2, 0, 0, 32, 31, 1, 0,
+		0, 0, 32, 33, 1, 0, 0, 0, 33, 40, 1, 0, 0, 0, 34, 35, 5, 13, 0, 0, 35,
+		36, 5, 1, 0, 0, 36, 40, 3, 4, 2, 0, 37, 40, 3, 4, 2, 0, 38, 40, 5, 14,
+		0, 0, 39, 28, 1, 0, 0, 0, 39, 34, 1, 0, 0, 0, 39, 37, 1, 0, 0, 0, 39, 38,
+		1, 0, 0, 0, 40, 3, 1, 0, 0, 0, 41, 42, 5, 15, 0, 0, 42, 51, 5, 3, 0, 0,
+		43, 48, 3, 12, 6, 0, 44, 45, 5, 4, 0, 0, 45, 47, 3, 12, 6, 0, 46, 44, 1,
+		0, 0, 0, 47, 50, 1, 0, 0, 0, 48, 46, 1, 0, 0, 0, 48, 49, 1, 0, 0, 0, 49,
+		52, 1, 0, 0, 0, 50, 48, 1, 0, 0, 0, 51, 43, 1, 0, 0, 0, 51, 52, 1, 0, 0,
+		0, 52, 53, 1, 0, 0, 0, 53, 55, 5, 5, 0, 0, 54, 56, 5, 2, 0, 0, 55, 54,
+		1, 0, 0, 0, 55, 56, 1, 0, 0, 0, 56, 5, 1, 0, 0, 0, 57, 61, 5, 6, 0, 0,
+		58, 60, 5, 16, 0, 0, 59, 58, 1, 0, 0, 0, 60, 63, 1, 0, 0, 0, 61, 59, 1,
+		0, 0, 0, 61, 62, 1, 0, 0, 0, 62, 64, 1, 0, 0, 0, 63, 61, 1, 0, 0, 0, 64,
+		74, 3, 8, 4, 0, 65, 67, 5, 16, 0, 0, 66, 65, 1, 0, 0, 0, 67, 70, 1, 0,
+		0, 0, 68, 66, 1, 0, 0, 0, 68, 69, 1, 0, 0, 0, 69, 71, 1, 0, 0, 0, 70, 68,
+		1, 0, 0, 0, 71, 73, 3, 8, 4, 0, 72, 68, 1, 0, 0, 0, 73, 76, 1, 0, 0, 0,
+		74, 72, 1, 0, 0, 0, 74, 75, 1, 0, 0, 0, 75, 77, 1, 0, 0, 0, 76, 74, 1,
+		0, 0, 0, 77, 78, 5, 7, 0, 0, 78, 88, 1, 0, 0, 0, 79, 83, 5, 6, 0, 0, 80,
+		82, 5, 16, 0, 0, 81, 80, 1, 0, 0, 0, 82, 85, 1, 0, 0, 0, 83, 81, 1, 0,
+		0, 0, 83, 84, 1, 0, 0, 0, 84, 86, 1, 0, 0, 0, 85, 83, 1, 0, 0, 0, 86, 88,
+		5, 7, 0, 0, 87, 57, 1, 0, 0, 0, 87, 79, 1, 0, 0, 0, 88, 7, 1, 0, 0, 0,
+		89, 90, 5, 15, 0, 0, 90, 91, 5, 1, 0, 0, 91, 93, 3, 12, 6, 0, 92, 94, 5,
+		2, 0, 0, 93, 92, 1, 0, 0, 0, 93, 94, 1, 0, 0, 0, 94, 101, 1, 0, 0, 0, 95,
+		97, 5, 16, 0, 0, 96, 95, 1, 0, 0, 0, 97, 100, 1, 0, 0, 0, 98, 96, 1, 0,
+		0, 0, 98, 99, 1, 0, 0, 0, 99, 102, 1, 0, 0, 0, 100, 98, 1, 0, 0, 0, 101,
+		98, 1, 0, 0, 0, 101, 102, 1, 0, 0, 0, 102, 9, 1, 0, 0, 0, 103, 112, 5,
+		8, 0, 0, 104, 109, 3, 12, 6, 0, 105, 106, 5, 4, 0, 0, 106, 108, 3, 12,
+		6, 0, 107, 105, 1, 0, 0, 0, 108, 111, 1, 0, 0, 0, 109, 107, 1, 0, 0, 0,
+		109, 110, 1, 0, 0, 0, 110, 113, 1, 0, 0, 0, 111, 109, 1, 0, 0, 0, 112,
+		104, 1, 0, 0, 0, 112, 113, 1, 0, 0, 0, 113, 114, 1, 0, 0, 0, 114, 115,
+		5, 9, 0, 0, 115, 11, 1, 0, 0, 0, 116, 123, 5, 10, 0, 0, 117, 123, 5, 11,
+		0, 0, 118, 123, 5, 12, 0, 0, 119, 123, 5, 13, 0, 0, 120, 123, 3, 6, 3,
+		0, 121, 123, 3, 10, 5, 0, 122, 116, 1, 0, 0, 0, 122, 117, 1, 0, 0, 0, 122,
+		118, 1, 0, 0, 0, 122, 119, 1, 0, 0, 0, 122, 120, 1, 0, 0, 0, 122, 121,
+		1, 0, 0, 0, 123, 13, 1, 0, 0, 0, 19, 18, 22, 26, 32, 39, 48, 51, 55, 61,
+		68, 74, 83, 87, 93, 98, 101, 109, 112, 122,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -158,10 +160,11 @@ const (
 const (
 	LambdaParserRULE_prog  = 0
 	LambdaParserRULE_stat  = 1
-	LambdaParserRULE_obj   = 2
-	LambdaParserRULE_pair  = 3
-	LambdaParserRULE_array = 4
-	LambdaParserRULE_value = 5
+	LambdaParserRULE_func  = 2
+	LambdaParserRULE_obj   = 3
+	LambdaParserRULE_pair  = 4
+	LambdaParserRULE_array = 5
+	LambdaParserRULE_value = 6
 )
 
 // IProgContext is an interface to support dynamic dispatch.
@@ -314,43 +317,43 @@ func (p *LambdaParser) Prog() (localctx IProgContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(22)
+	p.SetState(24)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = _la == LambdaParserID || _la == LambdaParserCOMMENT {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserID)|(1<<LambdaParserCOMMENT)|(1<<LambdaParserKEY))) != 0) {
 		{
-			p.SetState(12)
+			p.SetState(14)
 			p.Stat()
 		}
-		p.SetState(20)
+		p.SetState(22)
 		p.GetErrorHandler().Sync(p)
 		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) {
 		case 1:
-			p.SetState(16)
+			p.SetState(18)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			for _la == LambdaParserNEWLINE {
 				{
-					p.SetState(13)
+					p.SetState(15)
 					p.Match(LambdaParserNEWLINE)
 				}
 
-				p.SetState(18)
+				p.SetState(20)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 			}
 
 		case 2:
 			{
-				p.SetState(19)
+				p.SetState(21)
 				p.Match(LambdaParserEOF)
 			}
 
 		}
 
-		p.SetState(24)
+		p.SetState(26)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -406,6 +409,66 @@ func (s *StatContext) GetRuleContext() antlr.RuleContext {
 
 func (s *StatContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+type FunctionCallAssignmentStatementContext struct {
+	*StatContext
+}
+
+func NewFunctionCallAssignmentStatementContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *FunctionCallAssignmentStatementContext {
+	var p = new(FunctionCallAssignmentStatementContext)
+
+	p.StatContext = NewEmptyStatContext()
+	p.parser = parser
+	p.CopyFrom(ctx.(*StatContext))
+
+	return p
+}
+
+func (s *FunctionCallAssignmentStatementContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *FunctionCallAssignmentStatementContext) ID() antlr.TerminalNode {
+	return s.GetToken(LambdaParserID, 0)
+}
+
+func (s *FunctionCallAssignmentStatementContext) Func() IFuncContext {
+	var t antlr.RuleContext
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IFuncContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IFuncContext)
+}
+
+func (s *FunctionCallAssignmentStatementContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(LambdaListener); ok {
+		listenerT.EnterFunctionCallAssignmentStatement(s)
+	}
+}
+
+func (s *FunctionCallAssignmentStatementContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(LambdaListener); ok {
+		listenerT.ExitFunctionCallAssignmentStatement(s)
+	}
+}
+
+func (s *FunctionCallAssignmentStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case LambdaVisitor:
+		return t.VisitFunctionCallAssignmentStatement(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
 }
 
 type CommentStatementContext struct {
@@ -530,45 +593,12 @@ func (s *FunctionCallStatementContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FunctionCallStatementContext) ID() antlr.TerminalNode {
-	return s.GetToken(LambdaParserID, 0)
-}
-
-func (s *FunctionCallStatementContext) KEY() antlr.TerminalNode {
-	return s.GetToken(LambdaParserKEY, 0)
-}
-
-func (s *FunctionCallStatementContext) AllValue() []IValueContext {
-	children := s.GetChildren()
-	len := 0
-	for _, ctx := range children {
-		if _, ok := ctx.(IValueContext); ok {
-			len++
-		}
-	}
-
-	tst := make([]IValueContext, len)
-	i := 0
-	for _, ctx := range children {
-		if t, ok := ctx.(IValueContext); ok {
-			tst[i] = t.(IValueContext)
-			i++
-		}
-	}
-
-	return tst
-}
-
-func (s *FunctionCallStatementContext) Value(i int) IValueContext {
+func (s *FunctionCallStatementContext) Func() IFuncContext {
 	var t antlr.RuleContext
-	j := 0
 	for _, ctx := range s.GetChildren() {
-		if _, ok := ctx.(IValueContext); ok {
-			if j == i {
-				t = ctx.(antlr.RuleContext)
-				break
-			}
-			j++
+		if _, ok := ctx.(IFuncContext); ok {
+			t = ctx.(antlr.RuleContext)
+			break
 		}
 	}
 
@@ -576,7 +606,7 @@ func (s *FunctionCallStatementContext) Value(i int) IValueContext {
 		return nil
 	}
 
-	return t.(IValueContext)
+	return t.(IFuncContext)
 }
 
 func (s *FunctionCallStatementContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -625,106 +655,260 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		}
 	}()
 
-	p.SetState(51)
+	p.SetState(39)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 7, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 4, p.GetParserRuleContext()) {
 	case 1:
 		localctx = NewAssignmentStatementContext(p, localctx)
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(26)
+			p.SetState(28)
 			p.Match(LambdaParserID)
 		}
 		{
-			p.SetState(27)
+			p.SetState(29)
 			p.Match(LambdaParserT__0)
 		}
 		{
-			p.SetState(28)
+			p.SetState(30)
 			p.Value()
 		}
-		p.SetState(30)
+		p.SetState(32)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == LambdaParserT__1 {
 			{
-				p.SetState(29)
+				p.SetState(31)
 				p.Match(LambdaParserT__1)
 			}
 
 		}
 
 	case 2:
-		localctx = NewFunctionCallStatementContext(p, localctx)
+		localctx = NewFunctionCallAssignmentStatementContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(32)
+			p.SetState(34)
 			p.Match(LambdaParserID)
 		}
 		{
-			p.SetState(33)
+			p.SetState(35)
 			p.Match(LambdaParserT__0)
 		}
 		{
-			p.SetState(34)
-			p.Match(LambdaParserKEY)
+			p.SetState(36)
+			p.Func()
 		}
+
+	case 3:
+		localctx = NewFunctionCallStatementContext(p, localctx)
+		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(35)
-			p.Match(LambdaParserT__2)
+			p.SetState(37)
+			p.Func()
 		}
-		p.SetState(44)
-		p.GetErrorHandler().Sync(p)
-		_la = p.GetTokenStream().LA(1)
 
-		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN))) != 0 {
-			{
-				p.SetState(36)
-				p.Value()
-			}
-			p.SetState(41)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
-
-			for _la == LambdaParserT__3 {
-				{
-					p.SetState(37)
-					p.Match(LambdaParserT__3)
-				}
-				{
-					p.SetState(38)
-					p.Value()
-				}
-
-				p.SetState(43)
-				p.GetErrorHandler().Sync(p)
-				_la = p.GetTokenStream().LA(1)
-			}
-
-		}
+	case 4:
+		localctx = NewCommentStatementContext(p, localctx)
+		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(46)
-			p.Match(LambdaParserT__4)
+			p.SetState(38)
+			p.Match(LambdaParserCOMMENT)
+		}
+
+	}
+
+	return localctx
+}
+
+// IFuncContext is an interface to support dynamic dispatch.
+type IFuncContext interface {
+	antlr.ParserRuleContext
+
+	// GetParser returns the parser.
+	GetParser() antlr.Parser
+
+	// IsFuncContext differentiates from other interfaces.
+	IsFuncContext()
+}
+
+type FuncContext struct {
+	*antlr.BaseParserRuleContext
+	parser antlr.Parser
+}
+
+func NewEmptyFuncContext() *FuncContext {
+	var p = new(FuncContext)
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
+	p.RuleIndex = LambdaParserRULE_func
+	return p
+}
+
+func (*FuncContext) IsFuncContext() {}
+
+func NewFuncContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FuncContext {
+	var p = new(FuncContext)
+
+	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
+
+	p.parser = parser
+	p.RuleIndex = LambdaParserRULE_func
+
+	return p
+}
+
+func (s *FuncContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *FuncContext) KEY() antlr.TerminalNode {
+	return s.GetToken(LambdaParserKEY, 0)
+}
+
+func (s *FuncContext) AllValue() []IValueContext {
+	children := s.GetChildren()
+	len := 0
+	for _, ctx := range children {
+		if _, ok := ctx.(IValueContext); ok {
+			len++
+		}
+	}
+
+	tst := make([]IValueContext, len)
+	i := 0
+	for _, ctx := range children {
+		if t, ok := ctx.(IValueContext); ok {
+			tst[i] = t.(IValueContext)
+			i++
+		}
+	}
+
+	return tst
+}
+
+func (s *FuncContext) Value(i int) IValueContext {
+	var t antlr.RuleContext
+	j := 0
+	for _, ctx := range s.GetChildren() {
+		if _, ok := ctx.(IValueContext); ok {
+			if j == i {
+				t = ctx.(antlr.RuleContext)
+				break
+			}
+			j++
+		}
+	}
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IValueContext)
+}
+
+func (s *FuncContext) GetRuleContext() antlr.RuleContext {
+	return s
+}
+
+func (s *FuncContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+	return antlr.TreesStringTree(s, ruleNames, recog)
+}
+
+func (s *FuncContext) EnterRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(LambdaListener); ok {
+		listenerT.EnterFunc(s)
+	}
+}
+
+func (s *FuncContext) ExitRule(listener antlr.ParseTreeListener) {
+	if listenerT, ok := listener.(LambdaListener); ok {
+		listenerT.ExitFunc(s)
+	}
+}
+
+func (s *FuncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case LambdaVisitor:
+		return t.VisitFunc(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
+func (p *LambdaParser) Func() (localctx IFuncContext) {
+	this := p
+	_ = this
+
+	localctx = NewFuncContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, LambdaParserRULE_func)
+	var _la int
+
+	defer func() {
+		p.ExitRule()
+	}()
+
+	defer func() {
+		if err := recover(); err != nil {
+			if v, ok := err.(antlr.RecognitionException); ok {
+				localctx.SetException(v)
+				p.GetErrorHandler().ReportError(p, v)
+				p.GetErrorHandler().Recover(p, v)
+			} else {
+				panic(err)
+			}
+		}
+	}()
+
+	p.EnterOuterAlt(localctx, 1)
+	{
+		p.SetState(41)
+		p.Match(LambdaParserKEY)
+	}
+	{
+		p.SetState(42)
+		p.Match(LambdaParserT__2)
+	}
+	p.SetState(51)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN)|(1<<LambdaParserID))) != 0 {
+		{
+			p.SetState(43)
+			p.Value()
 		}
 		p.SetState(48)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == LambdaParserT__1 {
+		for _la == LambdaParserT__3 {
 			{
-				p.SetState(47)
-				p.Match(LambdaParserT__1)
+				p.SetState(44)
+				p.Match(LambdaParserT__3)
+			}
+			{
+				p.SetState(45)
+				p.Value()
 			}
 
+			p.SetState(50)
+			p.GetErrorHandler().Sync(p)
+			_la = p.GetTokenStream().LA(1)
 		}
 
-	case 3:
-		localctx = NewCommentStatementContext(p, localctx)
-		p.EnterOuterAlt(localctx, 3)
+	}
+	{
+		p.SetState(53)
+		p.Match(LambdaParserT__4)
+	}
+	p.SetState(55)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == LambdaParserT__1 {
 		{
-			p.SetState(50)
-			p.Match(LambdaParserCOMMENT)
+			p.SetState(54)
+			p.Match(LambdaParserT__1)
 		}
 
 	}
@@ -854,7 +1038,7 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 	_ = this
 
 	localctx = NewObjContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, LambdaParserRULE_obj)
+	p.EnterRule(localctx, 6, LambdaParserRULE_obj)
 	var _la int
 
 	defer func() {
@@ -873,90 +1057,90 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		}
 	}()
 
-	p.SetState(83)
+	p.SetState(87)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 12, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(53)
+			p.SetState(57)
 			p.Match(LambdaParserT__5)
 		}
-		p.SetState(57)
+		p.SetState(61)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserNEWLINE {
 			{
-				p.SetState(54)
+				p.SetState(58)
 				p.Match(LambdaParserNEWLINE)
 			}
 
-			p.SetState(59)
+			p.SetState(63)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(60)
+			p.SetState(64)
 			p.Pair()
 		}
-		p.SetState(70)
+		p.SetState(74)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserKEY || _la == LambdaParserNEWLINE {
-			p.SetState(64)
+			p.SetState(68)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			for _la == LambdaParserNEWLINE {
 				{
-					p.SetState(61)
+					p.SetState(65)
 					p.Match(LambdaParserNEWLINE)
 				}
 
-				p.SetState(66)
+				p.SetState(70)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 			}
 			{
-				p.SetState(67)
+				p.SetState(71)
 				p.Pair()
 			}
 
-			p.SetState(72)
+			p.SetState(76)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(73)
+			p.SetState(77)
 			p.Match(LambdaParserT__6)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(75)
+			p.SetState(79)
 			p.Match(LambdaParserT__5)
 		}
 
-		p.SetState(79)
+		p.SetState(83)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserNEWLINE {
 			{
-				p.SetState(76)
+				p.SetState(80)
 				p.Match(LambdaParserNEWLINE)
 			}
 
-			p.SetState(81)
+			p.SetState(85)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 		{
-			p.SetState(82)
+			p.SetState(86)
 			p.Match(LambdaParserT__6)
 		}
 
@@ -1066,7 +1250,7 @@ func (p *LambdaParser) Pair() (localctx IPairContext) {
 	_ = this
 
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, LambdaParserRULE_pair)
+	p.EnterRule(localctx, 8, LambdaParserRULE_pair)
 	var _la int
 
 	defer func() {
@@ -1089,45 +1273,45 @@ func (p *LambdaParser) Pair() (localctx IPairContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(85)
+		p.SetState(89)
 		p.Match(LambdaParserKEY)
 	}
 	{
-		p.SetState(86)
+		p.SetState(90)
 		p.Match(LambdaParserT__0)
 	}
 	{
-		p.SetState(87)
+		p.SetState(91)
 		p.Value()
 	}
-	p.SetState(89)
+	p.SetState(93)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == LambdaParserT__1 {
 		{
-			p.SetState(88)
+			p.SetState(92)
 			p.Match(LambdaParserT__1)
 		}
 
 	}
-	p.SetState(97)
+	p.SetState(101)
 	p.GetErrorHandler().Sync(p)
 
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 15, p.GetParserRuleContext()) == 1 {
-		p.SetState(94)
+		p.SetState(98)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
 
 		for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 			if _alt == 1 {
 				{
-					p.SetState(91)
+					p.SetState(95)
 					p.Match(LambdaParserNEWLINE)
 				}
 
 			}
-			p.SetState(96)
+			p.SetState(100)
 			p.GetErrorHandler().Sync(p)
 			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext())
 		}
@@ -1251,7 +1435,7 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 	_ = this
 
 	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, LambdaParserRULE_array)
+	p.EnterRule(localctx, 10, LambdaParserRULE_array)
 	var _la int
 
 	defer func() {
@@ -1272,40 +1456,40 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(99)
+		p.SetState(103)
 		p.Match(LambdaParserT__7)
 	}
-	p.SetState(108)
+	p.SetState(112)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN))) != 0 {
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN)|(1<<LambdaParserID))) != 0 {
 		{
-			p.SetState(100)
+			p.SetState(104)
 			p.Value()
 		}
-		p.SetState(105)
+		p.SetState(109)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == LambdaParserT__3 {
 			{
-				p.SetState(101)
+				p.SetState(105)
 				p.Match(LambdaParserT__3)
 			}
 			{
-				p.SetState(102)
+				p.SetState(106)
 				p.Value()
 			}
 
-			p.SetState(107)
+			p.SetState(111)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 
 	}
 	{
-		p.SetState(110)
+		p.SetState(114)
 		p.Match(LambdaParserT__8)
 	}
 
@@ -1360,6 +1544,10 @@ func (s *ValueContext) NUMBER() antlr.TerminalNode {
 
 func (s *ValueContext) BOOLEAN() antlr.TerminalNode {
 	return s.GetToken(LambdaParserBOOLEAN, 0)
+}
+
+func (s *ValueContext) ID() antlr.TerminalNode {
+	return s.GetToken(LambdaParserID, 0)
 }
 
 func (s *ValueContext) Obj() IObjContext {
@@ -1429,7 +1617,7 @@ func (p *LambdaParser) Value() (localctx IValueContext) {
 	_ = this
 
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, LambdaParserRULE_value)
+	p.EnterRule(localctx, 12, LambdaParserRULE_value)
 
 	defer func() {
 		p.ExitRule()
@@ -1447,42 +1635,49 @@ func (p *LambdaParser) Value() (localctx IValueContext) {
 		}
 	}()
 
-	p.SetState(117)
+	p.SetState(122)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case LambdaParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(112)
+			p.SetState(116)
 			p.Match(LambdaParserSTRING)
 		}
 
 	case LambdaParserNUMBER:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(113)
+			p.SetState(117)
 			p.Match(LambdaParserNUMBER)
 		}
 
 	case LambdaParserBOOLEAN:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(114)
+			p.SetState(118)
 			p.Match(LambdaParserBOOLEAN)
 		}
 
-	case LambdaParserT__5:
+	case LambdaParserID:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(115)
+			p.SetState(119)
+			p.Match(LambdaParserID)
+		}
+
+	case LambdaParserT__5:
+		p.EnterOuterAlt(localctx, 5)
+		{
+			p.SetState(120)
 			p.Obj()
 		}
 
 	case LambdaParserT__7:
-		p.EnterOuterAlt(localctx, 5)
+		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(116)
+			p.SetState(121)
 			p.Array()
 		}
 

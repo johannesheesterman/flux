@@ -9,6 +9,7 @@ import (
 
 var standardFunctions = map[string]func([]interface{}) interface{}{
 	"Process": Process,
+	"Print":   Print,
 }
 
 type LambdaVisitor struct {
@@ -28,6 +29,8 @@ func (this *LambdaVisitor) Visit(tree antlr.Tree) {
 		this.VisitProg(t)
 	case *parser.AssignmentStatementContext:
 		this.VisitAssignmentStatement(t)
+	case *parser.FunctionCallAssignmentStatementContext:
+		this.VisitFunctionCallAssignmentStatement(t)
 	case *parser.FunctionCallStatementContext:
 		this.VisitFunctionCallStatement(t)
 	}
@@ -45,8 +48,16 @@ func (this *LambdaVisitor) VisitAssignmentStatement(ctx *parser.AssignmentStatem
 	this.values[name] = this.VisitValue(value.(*parser.ValueContext))
 }
 
-func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *parser.FunctionCallStatementContext) {
+func (this *LambdaVisitor) VisitFunctionCallAssignmentStatement(ctx *parser.FunctionCallAssignmentStatementContext) {
 	name := ctx.ID().GetText()
+	this.values[name] = this.VisitFunc(ctx.Func().(*parser.FuncContext))
+}
+
+func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *parser.FunctionCallStatementContext) {
+	this.VisitFunc(ctx.Func().(*parser.FuncContext))
+}
+
+func (this *LambdaVisitor) VisitFunc(ctx *parser.FuncContext) interface{} {
 	args := make([]interface{}, len(ctx.AllValue()))
 	for i, c := range ctx.AllValue() {
 		args[i] = this.VisitValue(c.(*parser.ValueContext))
@@ -54,7 +65,7 @@ func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *parser.FunctionCallSt
 
 	functionName := ctx.KEY().GetText()
 	function := standardFunctions[functionName]
-	this.values[name] = function(args)
+	return function(args)
 }
 
 func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
@@ -73,6 +84,9 @@ func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	}
 	if (ctx.Obj()) != nil {
 		return this.VisitObj(ctx.Obj().(*parser.ObjContext))
+	}
+	if (ctx.ID()) != nil {
+		return this.values[ctx.ID().GetText()]
 	}
 
 	return nil
