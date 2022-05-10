@@ -1,12 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"github.com/johannesheesterman/lambda/parser"
 )
+
+var standardFunctions = map[string]func([]interface{}) interface{}{
+	"Process": Process,
+}
 
 type LambdaVisitor struct {
 	parser.BaseLambdaVisitor
@@ -25,6 +28,8 @@ func (this *LambdaVisitor) Visit(tree antlr.Tree) {
 		this.VisitProg(t)
 	case *parser.AssignmentStatementContext:
 		this.VisitAssignmentStatement(t)
+	case *parser.FunctionCallStatementContext:
+		this.VisitFunctionCallStatement(t)
 	}
 }
 
@@ -35,15 +40,26 @@ func (this *LambdaVisitor) VisitProg(ctx *parser.ProgContext) {
 }
 
 func (this *LambdaVisitor) VisitAssignmentStatement(ctx *parser.AssignmentStatementContext) {
-	name := ctx.Id().GetText()
+	name := ctx.ID().GetText()
 	value := ctx.Value()
 	this.values[name] = this.VisitValue(value.(*parser.ValueContext))
-	fmt.Println("VisitAssignmentStatement", name, this.values[name])
+}
+
+func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *parser.FunctionCallStatementContext) {
+	name := ctx.ID().GetText()
+	args := make([]interface{}, len(ctx.AllValue()))
+	for i, c := range ctx.AllValue() {
+		args[i] = this.VisitValue(c.(*parser.ValueContext))
+	}
+
+	functionName := ctx.KEY().GetText()
+	function := standardFunctions[functionName]
+	this.values[name] = function(args)
 }
 
 func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	if (ctx.STRING()) != nil {
-		return ctx.STRING().GetText()
+		return ctx.STRING().GetText()[1 : len(ctx.STRING().GetText())-1]
 	}
 	if ctx.NUMBER() != nil {
 		f, _ := strconv.ParseFloat(ctx.NUMBER().GetText(), 64)

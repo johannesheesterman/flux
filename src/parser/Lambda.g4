@@ -4,7 +4,8 @@ prog
                 :       (stat (NEWLINE*|EOF))+;
 
 stat            
-                :       id '=' value ';'?                                       # assignmentStatement
+                :       ID '=' value ';'?                                       # assignmentStatement
+                |       ID '=' KEY '(' ( value ( ',' value )* )? ')' ';'?       # functionCallStatement
                 |       COMMENT                                                 # commentStatement
                 ;     
 
@@ -46,7 +47,7 @@ fragment INT
                 :       '0' | [1-9] [0-9]*
                 ;
 
-id              
+ID              
                 :       '[' .+? ']';
 
 COMMENT         

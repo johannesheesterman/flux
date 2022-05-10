@@ -14,6 +14,9 @@ type LambdaListener interface {
 	// EnterAssignmentStatement is called when entering the assignmentStatement production.
 	EnterAssignmentStatement(c *AssignmentStatementContext)
 
+	// EnterFunctionCallStatement is called when entering the functionCallStatement production.
+	EnterFunctionCallStatement(c *FunctionCallStatementContext)
+
 	// EnterCommentStatement is called when entering the commentStatement production.
 	EnterCommentStatement(c *CommentStatementContext)
 
@@ -29,14 +32,14 @@ type LambdaListener interface {
 	// EnterValue is called when entering the value production.
 	EnterValue(c *ValueContext)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
-
 	// ExitProg is called when exiting the prog production.
 	ExitProg(c *ProgContext)
 
 	// ExitAssignmentStatement is called when exiting the assignmentStatement production.
 	ExitAssignmentStatement(c *AssignmentStatementContext)
+
+	// ExitFunctionCallStatement is called when exiting the functionCallStatement production.
+	ExitFunctionCallStatement(c *FunctionCallStatementContext)
 
 	// ExitCommentStatement is called when exiting the commentStatement production.
 	ExitCommentStatement(c *CommentStatementContext)
@@ -52,7 +55,4 @@ type LambdaListener interface {
 
 	// ExitValue is called when exiting the value production.
 	ExitValue(c *ValueContext)
-
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
 }

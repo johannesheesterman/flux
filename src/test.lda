@@ -1,6 +1,6 @@
 [a] = 123.456
-[array def] = [ 1, "ABC", true, [4,5,6] ]
 [obj] = { 
     id = "test"; 
     number = 789 
 };
+[function called] = Process("python3", "hello.py");
