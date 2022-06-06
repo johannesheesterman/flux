@@ -1,14 +1,14 @@
 import * as vscode from 'vscode';
 
-export class LambdaEditorProvider implements vscode.CustomTextEditorProvider {
+export class FluxEditorProvider implements vscode.CustomTextEditorProvider {
 
     public static register(context: vscode.ExtensionContext): vscode.Disposable {
-        const provider = new LambdaEditorProvider(context);
-        const providerRegistration = vscode.window.registerCustomEditorProvider(LambdaEditorProvider.viewType, provider);
+        const provider = new FluxEditorProvider(context);
+        const providerRegistration = vscode.window.registerCustomEditorProvider(FluxEditorProvider.viewType, provider);
         return providerRegistration;
     }
     
-    public static readonly viewType = 'lambda-editor.editor';
+    public static readonly viewType = 'flux-editor.editor';
 
     constructor(private readonly context: vscode.ExtensionContext) { }
 
@@ -62,10 +62,10 @@ export class LambdaEditorProvider implements vscode.CustomTextEditorProvider {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Lambda Editor</title>
+            <title>Flux Editor</title>
         </head>
         <body>
-            <h1>Lambda Editor</h1>
+            <h1>Flux Editor</h1>
         </body>
         </html>`;
     }

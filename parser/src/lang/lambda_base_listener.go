@@ -1,84 +1,84 @@
-// Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
+// Code generated from Flux.g4 by ANTLR 4.10. DO NOT EDIT.
 
-package lang // Lambda
+package lang // Flux
 
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-// BaseLambdaListener is a complete listener for a parse tree produced by LambdaParser.
-type BaseLambdaListener struct{}
+// BaseFluxListener is a complete listener for a parse tree produced by FluxParser.
+type BaseFluxListener struct{}
 
-var _ LambdaListener = &BaseLambdaListener{}
+var _ FluxListener = &BaseFluxListener{}
 
 // VisitTerminal is called when a terminal node is visited.
-func (s *BaseLambdaListener) VisitTerminal(node antlr.TerminalNode) {}
+func (s *BaseFluxListener) VisitTerminal(node antlr.TerminalNode) {}
 
 // VisitErrorNode is called when an error node is visited.
-func (s *BaseLambdaListener) VisitErrorNode(node antlr.ErrorNode) {}
+func (s *BaseFluxListener) VisitErrorNode(node antlr.ErrorNode) {}
 
 // EnterEveryRule is called when any rule is entered.
-func (s *BaseLambdaListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
+func (s *BaseFluxListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 
 // ExitEveryRule is called when any rule is exited.
-func (s *BaseLambdaListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
+func (s *BaseFluxListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
 // EnterProg is called when production prog is entered.
-func (s *BaseLambdaListener) EnterProg(ctx *ProgContext) {}
+func (s *BaseFluxListener) EnterProg(ctx *ProgContext) {}
 
 // ExitProg is called when production prog is exited.
-func (s *BaseLambdaListener) ExitProg(ctx *ProgContext) {}
+func (s *BaseFluxListener) ExitProg(ctx *ProgContext) {}
 
 // EnterAssignmentStatement is called when production assignmentStatement is entered.
-func (s *BaseLambdaListener) EnterAssignmentStatement(ctx *AssignmentStatementContext) {}
+func (s *BaseFluxListener) EnterAssignmentStatement(ctx *AssignmentStatementContext) {}
 
 // ExitAssignmentStatement is called when production assignmentStatement is exited.
-func (s *BaseLambdaListener) ExitAssignmentStatement(ctx *AssignmentStatementContext) {}
+func (s *BaseFluxListener) ExitAssignmentStatement(ctx *AssignmentStatementContext) {}
 
 // EnterFunctionCallAssignmentStatement is called when production functionCallAssignmentStatement is entered.
-func (s *BaseLambdaListener) EnterFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
+func (s *BaseFluxListener) EnterFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
 }
 
 // ExitFunctionCallAssignmentStatement is called when production functionCallAssignmentStatement is exited.
-func (s *BaseLambdaListener) ExitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
+func (s *BaseFluxListener) ExitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) {
 }
 
 // EnterFunctionCallStatement is called when production functionCallStatement is entered.
-func (s *BaseLambdaListener) EnterFunctionCallStatement(ctx *FunctionCallStatementContext) {}
+func (s *BaseFluxListener) EnterFunctionCallStatement(ctx *FunctionCallStatementContext) {}
 
 // ExitFunctionCallStatement is called when production functionCallStatement is exited.
-func (s *BaseLambdaListener) ExitFunctionCallStatement(ctx *FunctionCallStatementContext) {}
+func (s *BaseFluxListener) ExitFunctionCallStatement(ctx *FunctionCallStatementContext) {}
 
 // EnterCommentStatement is called when production commentStatement is entered.
-func (s *BaseLambdaListener) EnterCommentStatement(ctx *CommentStatementContext) {}
+func (s *BaseFluxListener) EnterCommentStatement(ctx *CommentStatementContext) {}
 
 // ExitCommentStatement is called when production commentStatement is exited.
-func (s *BaseLambdaListener) ExitCommentStatement(ctx *CommentStatementContext) {}
+func (s *BaseFluxListener) ExitCommentStatement(ctx *CommentStatementContext) {}
 
 // EnterFunc is called when production func is entered.
-func (s *BaseLambdaListener) EnterFunc(ctx *FuncContext) {}
+func (s *BaseFluxListener) EnterFunc(ctx *FuncContext) {}
 
 // ExitFunc is called when production func is exited.
-func (s *BaseLambdaListener) ExitFunc(ctx *FuncContext) {}
+func (s *BaseFluxListener) ExitFunc(ctx *FuncContext) {}
 
 // EnterObj is called when production obj is entered.
-func (s *BaseLambdaListener) EnterObj(ctx *ObjContext) {}
+func (s *BaseFluxListener) EnterObj(ctx *ObjContext) {}
 
 // ExitObj is called when production obj is exited.
-func (s *BaseLambdaListener) ExitObj(ctx *ObjContext) {}
+func (s *BaseFluxListener) ExitObj(ctx *ObjContext) {}
 
 // EnterPair is called when production pair is entered.
-func (s *BaseLambdaListener) EnterPair(ctx *PairContext) {}
+func (s *BaseFluxListener) EnterPair(ctx *PairContext) {}
 
 // ExitPair is called when production pair is exited.
-func (s *BaseLambdaListener) ExitPair(ctx *PairContext) {}
+func (s *BaseFluxListener) ExitPair(ctx *PairContext) {}
 
 // EnterArray is called when production array is entered.
-func (s *BaseLambdaListener) EnterArray(ctx *ArrayContext) {}
+func (s *BaseFluxListener) EnterArray(ctx *ArrayContext) {}
 
 // ExitArray is called when production array is exited.
-func (s *BaseLambdaListener) ExitArray(ctx *ArrayContext) {}
+func (s *BaseFluxListener) ExitArray(ctx *ArrayContext) {}
 
 // EnterValue is called when production value is entered.
-func (s *BaseLambdaListener) EnterValue(ctx *ValueContext) {}
+func (s *BaseFluxListener) EnterValue(ctx *ValueContext) {}
 
 // ExitValue is called when production value is exited.
-func (s *BaseLambdaListener) ExitValue(ctx *ValueContext) {}
+func (s *BaseFluxListener) ExitValue(ctx *ValueContext) {}

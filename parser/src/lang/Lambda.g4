@@ -1,4 +1,4 @@
-grammar Lambda;
+grammar Flux;
 
 prog            
                 :       (stat (NEWLINE*|EOF))+;

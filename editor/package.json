@@ -1,6 +1,6 @@
 {
-	"name": "lambda-editor",
-	"displayName": "lambda-editor",
+	"name": "flux-editor",
+	"displayName": "flux-editor",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -10,15 +10,15 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:lambda-editor.openWithEditor",
-		"onCustomEditor:lambda-editor.editor"
+		"onCommand:flux-editor.openWithEditor",
+		"onCustomEditor:flux-editor.editor"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"customEditors": [
 			{
-				"viewType": "lambda-editor.editor",
-				"displayName": "Lambda Editor",
+				"viewType": "flux-editor.editor",
+				"displayName": "Flux Editor",
 				"selector": [
 					{
 						"filenamePattern": "*.lda"
@@ -29,8 +29,8 @@
 		],
 		"commands": [
 			{
-				"command": "lambda-editor.openWithEditor",
-				"title": "Lambda: Open with editor"
+				"command": "flux-editor.openWithEditor",
+				"title": "Flux: Open with editor"
 			}
 		]
 	},

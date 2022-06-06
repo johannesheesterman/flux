@@ -1,4 +1,4 @@
-// Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
+// Code generated from Flux.g4 by ANTLR 4.10. DO NOT EDIT.
 
 package lang
 
@@ -15,14 +15,14 @@ var _ = fmt.Printf
 var _ = sync.Once{}
 var _ = unicode.IsLetter
 
-type LambdaLexer struct {
+type FluxLexer struct {
 	*antlr.BaseLexer
 	channelNames []string
 	modeNames    []string
 	// TODO: EOF string
 }
 
-var lambdalexerLexerStaticData struct {
+var fluxlexerLexerStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	channelNames           []string
@@ -35,8 +35,8 @@ var lambdalexerLexerStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func lambdalexerLexerInit() {
-	staticData := &lambdalexerLexerStaticData
+func fluxlexerLexerInit() {
+	staticData := &fluxlexerLexerStaticData
 	staticData.channelNames = []string{
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 	}
@@ -126,50 +126,50 @@ func lambdalexerLexerInit() {
 	}
 }
 
-// LambdaLexerInit initializes any static state used to implement LambdaLexer. By default the
+// FluxLexerInit initializes any static state used to implement FluxLexer. By default the
 // static state used to implement the lexer is lazily initialized during the first call to
-// NewLambdaLexer(). You can call this function if you wish to initialize the static state ahead
+// NewFluxLexer(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func LambdaLexerInit() {
-	staticData := &lambdalexerLexerStaticData
-	staticData.once.Do(lambdalexerLexerInit)
+func FluxLexerInit() {
+	staticData := &fluxlexerLexerStaticData
+	staticData.once.Do(fluxlexerLexerInit)
 }
 
-// NewLambdaLexer produces a new lexer instance for the optional input antlr.CharStream.
-func NewLambdaLexer(input antlr.CharStream) *LambdaLexer {
-	LambdaLexerInit()
-	l := new(LambdaLexer)
+// NewFluxLexer produces a new lexer instance for the optional input antlr.CharStream.
+func NewFluxLexer(input antlr.CharStream) *FluxLexer {
+	FluxLexerInit()
+	l := new(FluxLexer)
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	staticData := &lambdalexerLexerStaticData
+	staticData := &fluxlexerLexerStaticData
 	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
 	l.channelNames = staticData.channelNames
 	l.modeNames = staticData.modeNames
 	l.RuleNames = staticData.ruleNames
 	l.LiteralNames = staticData.literalNames
 	l.SymbolicNames = staticData.symbolicNames
-	l.GrammarFileName = "Lambda.g4"
+	l.GrammarFileName = "Flux.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
 	return l
 }
 
-// LambdaLexer tokens.
+// FluxLexer tokens.
 const (
-	LambdaLexerT__0    = 1
-	LambdaLexerT__1    = 2
-	LambdaLexerT__2    = 3
-	LambdaLexerT__3    = 4
-	LambdaLexerT__4    = 5
-	LambdaLexerT__5    = 6
-	LambdaLexerT__6    = 7
-	LambdaLexerT__7    = 8
-	LambdaLexerT__8    = 9
-	LambdaLexerSTRING  = 10
-	LambdaLexerNUMBER  = 11
-	LambdaLexerBOOLEAN = 12
-	LambdaLexerID      = 13
-	LambdaLexerCOMMENT = 14
-	LambdaLexerKEY     = 15
-	LambdaLexerNEWLINE = 16
-	LambdaLexerWS      = 17
+	FluxLexerT__0    = 1
+	FluxLexerT__1    = 2
+	FluxLexerT__2    = 3
+	FluxLexerT__3    = 4
+	FluxLexerT__4    = 5
+	FluxLexerT__5    = 6
+	FluxLexerT__6    = 7
+	FluxLexerT__7    = 8
+	FluxLexerT__8    = 9
+	FluxLexerSTRING  = 10
+	FluxLexerNUMBER  = 11
+	FluxLexerBOOLEAN = 12
+	FluxLexerID      = 13
+	FluxLexerCOMMENT = 14
+	FluxLexerKEY     = 15
+	FluxLexerNEWLINE = 16
+	FluxLexerWS      = 17
 )

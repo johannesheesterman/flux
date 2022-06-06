@@ -1,49 +1,49 @@
-// Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
+// Code generated from Flux.g4 by ANTLR 4.10. DO NOT EDIT.
 
-package lang // Lambda
+package lang // Flux
 
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-type BaseLambdaVisitor struct {
+type BaseFluxVisitor struct {
 	*antlr.BaseParseTreeVisitor
 }
 
-func (v *BaseLambdaVisitor) VisitProg(ctx *ProgContext) interface{} {
+func (v *BaseFluxVisitor) VisitProg(ctx *ProgContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitAssignmentStatement(ctx *AssignmentStatementContext) interface{} {
+func (v *BaseFluxVisitor) VisitAssignmentStatement(ctx *AssignmentStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) interface{} {
+func (v *BaseFluxVisitor) VisitFunctionCallAssignmentStatement(ctx *FunctionCallAssignmentStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitFunctionCallStatement(ctx *FunctionCallStatementContext) interface{} {
+func (v *BaseFluxVisitor) VisitFunctionCallStatement(ctx *FunctionCallStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitCommentStatement(ctx *CommentStatementContext) interface{} {
+func (v *BaseFluxVisitor) VisitCommentStatement(ctx *CommentStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitFunc(ctx *FuncContext) interface{} {
+func (v *BaseFluxVisitor) VisitFunc(ctx *FuncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitObj(ctx *ObjContext) interface{} {
+func (v *BaseFluxVisitor) VisitObj(ctx *ObjContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitPair(ctx *PairContext) interface{} {
+func (v *BaseFluxVisitor) VisitPair(ctx *PairContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitArray(ctx *ArrayContext) interface{} {
+func (v *BaseFluxVisitor) VisitArray(ctx *ArrayContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLambdaVisitor) VisitValue(ctx *ValueContext) interface{} {
+func (v *BaseFluxVisitor) VisitValue(ctx *ValueContext) interface{} {
 	return v.VisitChildren(ctx)
 }

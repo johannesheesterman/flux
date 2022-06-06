@@ -1,11 +1,11 @@
-// Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
+// Code generated from Flux.g4 by ANTLR 4.10. DO NOT EDIT.
 
-package lang // Lambda
+package lang // Flux
 
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-// LambdaListener is a complete listener for a parse tree produced by LambdaParser.
-type LambdaListener interface {
+// FluxListener is a complete listener for a parse tree produced by FluxParser.
+type FluxListener interface {
 	antlr.ParseTreeListener
 
 	// EnterProg is called when entering the prog production.

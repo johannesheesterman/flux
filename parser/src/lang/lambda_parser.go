@@ -1,6 +1,6 @@
-// Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
+// Code generated from Flux.g4 by ANTLR 4.10. DO NOT EDIT.
 
-package lang // Lambda
+package lang // Flux
 
 import (
 	"fmt"
@@ -15,11 +15,11 @@ var _ = fmt.Printf
 var _ = strconv.Itoa
 var _ = sync.Once{}
 
-type LambdaParser struct {
+type FluxParser struct {
 	*antlr.BaseParser
 }
 
-var lambdaParserStaticData struct {
+var fluxParserStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	literalNames           []string
@@ -30,8 +30,8 @@ var lambdaParserStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func lambdaParserInit() {
-	staticData := &lambdaParserStaticData
+func fluxParserInit() {
+	staticData := &fluxParserStaticData
 	staticData.literalNames = []string{
 		"", "'='", "';'", "'('", "','", "')'", "'{'", "'}'", "'['", "']'",
 	}
@@ -109,61 +109,61 @@ func lambdaParserInit() {
 	}
 }
 
-// LambdaParserInit initializes any static state used to implement LambdaParser. By default the
+// FluxParserInit initializes any static state used to implement FluxParser. By default the
 // static state used to implement the parser is lazily initialized during the first call to
-// NewLambdaParser(). You can call this function if you wish to initialize the static state ahead
+// NewFluxParser(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func LambdaParserInit() {
-	staticData := &lambdaParserStaticData
-	staticData.once.Do(lambdaParserInit)
+func FluxParserInit() {
+	staticData := &fluxParserStaticData
+	staticData.once.Do(fluxParserInit)
 }
 
-// NewLambdaParser produces a new parser instance for the optional input antlr.TokenStream.
-func NewLambdaParser(input antlr.TokenStream) *LambdaParser {
-	LambdaParserInit()
-	this := new(LambdaParser)
+// NewFluxParser produces a new parser instance for the optional input antlr.TokenStream.
+func NewFluxParser(input antlr.TokenStream) *FluxParser {
+	FluxParserInit()
+	this := new(FluxParser)
 	this.BaseParser = antlr.NewBaseParser(input)
-	staticData := &lambdaParserStaticData
+	staticData := &fluxParserStaticData
 	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
 	this.RuleNames = staticData.ruleNames
 	this.LiteralNames = staticData.literalNames
 	this.SymbolicNames = staticData.symbolicNames
-	this.GrammarFileName = "Lambda.g4"
+	this.GrammarFileName = "Flux.g4"
 
 	return this
 }
 
-// LambdaParser tokens.
+// FluxParser tokens.
 const (
-	LambdaParserEOF     = antlr.TokenEOF
-	LambdaParserT__0    = 1
-	LambdaParserT__1    = 2
-	LambdaParserT__2    = 3
-	LambdaParserT__3    = 4
-	LambdaParserT__4    = 5
-	LambdaParserT__5    = 6
-	LambdaParserT__6    = 7
-	LambdaParserT__7    = 8
-	LambdaParserT__8    = 9
-	LambdaParserSTRING  = 10
-	LambdaParserNUMBER  = 11
-	LambdaParserBOOLEAN = 12
-	LambdaParserID      = 13
-	LambdaParserCOMMENT = 14
-	LambdaParserKEY     = 15
-	LambdaParserNEWLINE = 16
-	LambdaParserWS      = 17
+	FluxParserEOF     = antlr.TokenEOF
+	FluxParserT__0    = 1
+	FluxParserT__1    = 2
+	FluxParserT__2    = 3
+	FluxParserT__3    = 4
+	FluxParserT__4    = 5
+	FluxParserT__5    = 6
+	FluxParserT__6    = 7
+	FluxParserT__7    = 8
+	FluxParserT__8    = 9
+	FluxParserSTRING  = 10
+	FluxParserNUMBER  = 11
+	FluxParserBOOLEAN = 12
+	FluxParserID      = 13
+	FluxParserCOMMENT = 14
+	FluxParserKEY     = 15
+	FluxParserNEWLINE = 16
+	FluxParserWS      = 17
 )
 
-// LambdaParser rules.
+// FluxParser rules.
 const (
-	LambdaParserRULE_prog  = 0
-	LambdaParserRULE_stat  = 1
-	LambdaParserRULE_func  = 2
-	LambdaParserRULE_obj   = 3
-	LambdaParserRULE_pair  = 4
-	LambdaParserRULE_array = 5
-	LambdaParserRULE_value = 6
+	FluxParserRULE_prog  = 0
+	FluxParserRULE_stat  = 1
+	FluxParserRULE_func  = 2
+	FluxParserRULE_obj   = 3
+	FluxParserRULE_pair  = 4
+	FluxParserRULE_array = 5
+	FluxParserRULE_value = 6
 )
 
 // IProgContext is an interface to support dynamic dispatch.
@@ -185,7 +185,7 @@ type ProgContext struct {
 func NewEmptyProgContext() *ProgContext {
 	var p = new(ProgContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_prog
+	p.RuleIndex = FluxParserRULE_prog
 	return p
 }
 
@@ -197,7 +197,7 @@ func NewProgContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_prog
+	p.RuleIndex = FluxParserRULE_prog
 
 	return p
 }
@@ -246,19 +246,19 @@ func (s *ProgContext) Stat(i int) IStatContext {
 }
 
 func (s *ProgContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(LambdaParserEOF)
+	return s.GetTokens(FluxParserEOF)
 }
 
 func (s *ProgContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(LambdaParserEOF, i)
+	return s.GetToken(FluxParserEOF, i)
 }
 
 func (s *ProgContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(LambdaParserNEWLINE)
+	return s.GetTokens(FluxParserNEWLINE)
 }
 
 func (s *ProgContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(LambdaParserNEWLINE, i)
+	return s.GetToken(FluxParserNEWLINE, i)
 }
 
 func (s *ProgContext) GetRuleContext() antlr.RuleContext {
@@ -270,20 +270,20 @@ func (s *ProgContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *ProgContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterProg(s)
 	}
 }
 
 func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitProg(s)
 	}
 }
 
 func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitProg(s)
 
 	default:
@@ -291,12 +291,12 @@ func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Prog() (localctx IProgContext) {
+func (p *FluxParser) Prog() (localctx IProgContext) {
 	this := p
 	_ = this
 
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, LambdaParserRULE_prog)
+	p.EnterRule(localctx, 0, FluxParserRULE_prog)
 	var _la int
 
 	defer func() {
@@ -320,7 +320,7 @@ func (p *LambdaParser) Prog() (localctx IProgContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserID)|(1<<LambdaParserCOMMENT)|(1<<LambdaParserKEY))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FluxParserID)|(1<<FluxParserCOMMENT)|(1<<FluxParserKEY))) != 0) {
 		{
 			p.SetState(14)
 			p.Stat()
@@ -333,10 +333,10 @@ func (p *LambdaParser) Prog() (localctx IProgContext) {
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			for _la == LambdaParserNEWLINE {
+			for _la == FluxParserNEWLINE {
 				{
 					p.SetState(15)
-					p.Match(LambdaParserNEWLINE)
+					p.Match(FluxParserNEWLINE)
 				}
 
 				p.SetState(20)
@@ -347,7 +347,7 @@ func (p *LambdaParser) Prog() (localctx IProgContext) {
 		case 2:
 			{
 				p.SetState(21)
-				p.Match(LambdaParserEOF)
+				p.Match(FluxParserEOF)
 			}
 
 		}
@@ -379,7 +379,7 @@ type StatContext struct {
 func NewEmptyStatContext() *StatContext {
 	var p = new(StatContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_stat
+	p.RuleIndex = FluxParserRULE_stat
 	return p
 }
 
@@ -391,7 +391,7 @@ func NewStatContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_stat
+	p.RuleIndex = FluxParserRULE_stat
 
 	return p
 }
@@ -429,7 +429,7 @@ func (s *FunctionCallAssignmentStatementContext) GetRuleContext() antlr.RuleCont
 }
 
 func (s *FunctionCallAssignmentStatementContext) ID() antlr.TerminalNode {
-	return s.GetToken(LambdaParserID, 0)
+	return s.GetToken(FluxParserID, 0)
 }
 
 func (s *FunctionCallAssignmentStatementContext) Func() IFuncContext {
@@ -449,20 +449,20 @@ func (s *FunctionCallAssignmentStatementContext) Func() IFuncContext {
 }
 
 func (s *FunctionCallAssignmentStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterFunctionCallAssignmentStatement(s)
 	}
 }
 
 func (s *FunctionCallAssignmentStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitFunctionCallAssignmentStatement(s)
 	}
 }
 
 func (s *FunctionCallAssignmentStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitFunctionCallAssignmentStatement(s)
 
 	default:
@@ -489,24 +489,24 @@ func (s *CommentStatementContext) GetRuleContext() antlr.RuleContext {
 }
 
 func (s *CommentStatementContext) COMMENT() antlr.TerminalNode {
-	return s.GetToken(LambdaParserCOMMENT, 0)
+	return s.GetToken(FluxParserCOMMENT, 0)
 }
 
 func (s *CommentStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterCommentStatement(s)
 	}
 }
 
 func (s *CommentStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitCommentStatement(s)
 	}
 }
 
 func (s *CommentStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitCommentStatement(s)
 
 	default:
@@ -533,7 +533,7 @@ func (s *AssignmentStatementContext) GetRuleContext() antlr.RuleContext {
 }
 
 func (s *AssignmentStatementContext) ID() antlr.TerminalNode {
-	return s.GetToken(LambdaParserID, 0)
+	return s.GetToken(FluxParserID, 0)
 }
 
 func (s *AssignmentStatementContext) Value() IValueContext {
@@ -553,20 +553,20 @@ func (s *AssignmentStatementContext) Value() IValueContext {
 }
 
 func (s *AssignmentStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterAssignmentStatement(s)
 	}
 }
 
 func (s *AssignmentStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitAssignmentStatement(s)
 	}
 }
 
 func (s *AssignmentStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitAssignmentStatement(s)
 
 	default:
@@ -609,20 +609,20 @@ func (s *FunctionCallStatementContext) Func() IFuncContext {
 }
 
 func (s *FunctionCallStatementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterFunctionCallStatement(s)
 	}
 }
 
 func (s *FunctionCallStatementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitFunctionCallStatement(s)
 	}
 }
 
 func (s *FunctionCallStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitFunctionCallStatement(s)
 
 	default:
@@ -630,12 +630,12 @@ func (s *FunctionCallStatementContext) Accept(visitor antlr.ParseTreeVisitor) in
 	}
 }
 
-func (p *LambdaParser) Stat() (localctx IStatContext) {
+func (p *FluxParser) Stat() (localctx IStatContext) {
 	this := p
 	_ = this
 
 	localctx = NewStatContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, LambdaParserRULE_stat)
+	p.EnterRule(localctx, 2, FluxParserRULE_stat)
 	var _la int
 
 	defer func() {
@@ -662,11 +662,11 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(28)
-			p.Match(LambdaParserID)
+			p.Match(FluxParserID)
 		}
 		{
 			p.SetState(29)
-			p.Match(LambdaParserT__0)
+			p.Match(FluxParserT__0)
 		}
 		{
 			p.SetState(30)
@@ -676,10 +676,10 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == LambdaParserT__1 {
+		if _la == FluxParserT__1 {
 			{
 				p.SetState(31)
-				p.Match(LambdaParserT__1)
+				p.Match(FluxParserT__1)
 			}
 
 		}
@@ -689,11 +689,11 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(34)
-			p.Match(LambdaParserID)
+			p.Match(FluxParserID)
 		}
 		{
 			p.SetState(35)
-			p.Match(LambdaParserT__0)
+			p.Match(FluxParserT__0)
 		}
 		{
 			p.SetState(36)
@@ -713,7 +713,7 @@ func (p *LambdaParser) Stat() (localctx IStatContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(38)
-			p.Match(LambdaParserCOMMENT)
+			p.Match(FluxParserCOMMENT)
 		}
 
 	}
@@ -740,7 +740,7 @@ type FuncContext struct {
 func NewEmptyFuncContext() *FuncContext {
 	var p = new(FuncContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_func
+	p.RuleIndex = FluxParserRULE_func
 	return p
 }
 
@@ -752,7 +752,7 @@ func NewFuncContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_func
+	p.RuleIndex = FluxParserRULE_func
 
 	return p
 }
@@ -760,7 +760,7 @@ func NewFuncContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 func (s *FuncContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *FuncContext) KEY() antlr.TerminalNode {
-	return s.GetToken(LambdaParserKEY, 0)
+	return s.GetToken(FluxParserKEY, 0)
 }
 
 func (s *FuncContext) AllValue() []IValueContext {
@@ -813,20 +813,20 @@ func (s *FuncContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *FuncContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterFunc(s)
 	}
 }
 
 func (s *FuncContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitFunc(s)
 	}
 }
 
 func (s *FuncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitFunc(s)
 
 	default:
@@ -834,12 +834,12 @@ func (s *FuncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Func() (localctx IFuncContext) {
+func (p *FluxParser) Func() (localctx IFuncContext) {
 	this := p
 	_ = this
 
 	localctx = NewFuncContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, LambdaParserRULE_func)
+	p.EnterRule(localctx, 4, FluxParserRULE_func)
 	var _la int
 
 	defer func() {
@@ -861,17 +861,17 @@ func (p *LambdaParser) Func() (localctx IFuncContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(41)
-		p.Match(LambdaParserKEY)
+		p.Match(FluxParserKEY)
 	}
 	{
 		p.SetState(42)
-		p.Match(LambdaParserT__2)
+		p.Match(FluxParserT__2)
 	}
 	p.SetState(51)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN)|(1<<LambdaParserID))) != 0 {
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FluxParserT__5)|(1<<FluxParserT__7)|(1<<FluxParserSTRING)|(1<<FluxParserNUMBER)|(1<<FluxParserBOOLEAN)|(1<<FluxParserID))) != 0 {
 		{
 			p.SetState(43)
 			p.Value()
@@ -880,10 +880,10 @@ func (p *LambdaParser) Func() (localctx IFuncContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LambdaParserT__3 {
+		for _la == FluxParserT__3 {
 			{
 				p.SetState(44)
-				p.Match(LambdaParserT__3)
+				p.Match(FluxParserT__3)
 			}
 			{
 				p.SetState(45)
@@ -898,16 +898,16 @@ func (p *LambdaParser) Func() (localctx IFuncContext) {
 	}
 	{
 		p.SetState(53)
-		p.Match(LambdaParserT__4)
+		p.Match(FluxParserT__4)
 	}
 	p.SetState(55)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == LambdaParserT__1 {
+	if _la == FluxParserT__1 {
 		{
 			p.SetState(54)
-			p.Match(LambdaParserT__1)
+			p.Match(FluxParserT__1)
 		}
 
 	}
@@ -934,7 +934,7 @@ type ObjContext struct {
 func NewEmptyObjContext() *ObjContext {
 	var p = new(ObjContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_obj
+	p.RuleIndex = FluxParserRULE_obj
 	return p
 }
 
@@ -946,7 +946,7 @@ func NewObjContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_obj
+	p.RuleIndex = FluxParserRULE_obj
 
 	return p
 }
@@ -995,11 +995,11 @@ func (s *ObjContext) Pair(i int) IPairContext {
 }
 
 func (s *ObjContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(LambdaParserNEWLINE)
+	return s.GetTokens(FluxParserNEWLINE)
 }
 
 func (s *ObjContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(LambdaParserNEWLINE, i)
+	return s.GetToken(FluxParserNEWLINE, i)
 }
 
 func (s *ObjContext) GetRuleContext() antlr.RuleContext {
@@ -1011,20 +1011,20 @@ func (s *ObjContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 }
 
 func (s *ObjContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterObj(s)
 	}
 }
 
 func (s *ObjContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitObj(s)
 	}
 }
 
 func (s *ObjContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitObj(s)
 
 	default:
@@ -1032,12 +1032,12 @@ func (s *ObjContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Obj() (localctx IObjContext) {
+func (p *FluxParser) Obj() (localctx IObjContext) {
 	this := p
 	_ = this
 
 	localctx = NewObjContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, LambdaParserRULE_obj)
+	p.EnterRule(localctx, 6, FluxParserRULE_obj)
 	var _la int
 
 	defer func() {
@@ -1065,16 +1065,16 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(57)
-			p.Match(LambdaParserT__5)
+			p.Match(FluxParserT__5)
 		}
 		p.SetState(61)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LambdaParserNEWLINE {
+		for _la == FluxParserNEWLINE {
 			{
 				p.SetState(58)
-				p.Match(LambdaParserNEWLINE)
+				p.Match(FluxParserNEWLINE)
 			}
 
 			p.SetState(63)
@@ -1095,10 +1095,10 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 
-				for _la == LambdaParserNEWLINE {
+				for _la == FluxParserNEWLINE {
 					{
 						p.SetState(65)
-						p.Match(LambdaParserNEWLINE)
+						p.Match(FluxParserNEWLINE)
 					}
 
 					p.SetState(70)
@@ -1119,10 +1119,10 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LambdaParserNEWLINE {
+		for _la == FluxParserNEWLINE {
 			{
 				p.SetState(77)
-				p.Match(LambdaParserNEWLINE)
+				p.Match(FluxParserNEWLINE)
 			}
 
 			p.SetState(82)
@@ -1131,24 +1131,24 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 		}
 		{
 			p.SetState(83)
-			p.Match(LambdaParserT__6)
+			p.Match(FluxParserT__6)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(85)
-			p.Match(LambdaParserT__5)
+			p.Match(FluxParserT__5)
 		}
 
 		p.SetState(89)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LambdaParserNEWLINE {
+		for _la == FluxParserNEWLINE {
 			{
 				p.SetState(86)
-				p.Match(LambdaParserNEWLINE)
+				p.Match(FluxParserNEWLINE)
 			}
 
 			p.SetState(91)
@@ -1158,7 +1158,7 @@ func (p *LambdaParser) Obj() (localctx IObjContext) {
 
 		{
 			p.SetState(92)
-			p.Match(LambdaParserT__6)
+			p.Match(FluxParserT__6)
 		}
 
 	}
@@ -1185,7 +1185,7 @@ type PairContext struct {
 func NewEmptyPairContext() *PairContext {
 	var p = new(PairContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_pair
+	p.RuleIndex = FluxParserRULE_pair
 	return p
 }
 
@@ -1197,7 +1197,7 @@ func NewPairContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_pair
+	p.RuleIndex = FluxParserRULE_pair
 
 	return p
 }
@@ -1205,7 +1205,7 @@ func NewPairContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 func (s *PairContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *PairContext) KEY() antlr.TerminalNode {
-	return s.GetToken(LambdaParserKEY, 0)
+	return s.GetToken(FluxParserKEY, 0)
 }
 
 func (s *PairContext) Value() IValueContext {
@@ -1233,20 +1233,20 @@ func (s *PairContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *PairContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterPair(s)
 	}
 }
 
 func (s *PairContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitPair(s)
 	}
 }
 
 func (s *PairContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitPair(s)
 
 	default:
@@ -1254,12 +1254,12 @@ func (s *PairContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Pair() (localctx IPairContext) {
+func (p *FluxParser) Pair() (localctx IPairContext) {
 	this := p
 	_ = this
 
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, LambdaParserRULE_pair)
+	p.EnterRule(localctx, 8, FluxParserRULE_pair)
 	var _la int
 
 	defer func() {
@@ -1281,11 +1281,11 @@ func (p *LambdaParser) Pair() (localctx IPairContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(95)
-		p.Match(LambdaParserKEY)
+		p.Match(FluxParserKEY)
 	}
 	{
 		p.SetState(96)
-		p.Match(LambdaParserT__0)
+		p.Match(FluxParserT__0)
 	}
 	{
 		p.SetState(97)
@@ -1295,10 +1295,10 @@ func (p *LambdaParser) Pair() (localctx IPairContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == LambdaParserT__1 {
+	if _la == FluxParserT__1 {
 		{
 			p.SetState(98)
-			p.Match(LambdaParserT__1)
+			p.Match(FluxParserT__1)
 		}
 
 	}
@@ -1325,7 +1325,7 @@ type ArrayContext struct {
 func NewEmptyArrayContext() *ArrayContext {
 	var p = new(ArrayContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_array
+	p.RuleIndex = FluxParserRULE_array
 	return p
 }
 
@@ -1337,7 +1337,7 @@ func NewArrayContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_array
+	p.RuleIndex = FluxParserRULE_array
 
 	return p
 }
@@ -1394,20 +1394,20 @@ func (s *ArrayContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterArray(s)
 	}
 }
 
 func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitArray(s)
 	}
 }
 
 func (s *ArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitArray(s)
 
 	default:
@@ -1415,12 +1415,12 @@ func (s *ArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Array() (localctx IArrayContext) {
+func (p *FluxParser) Array() (localctx IArrayContext) {
 	this := p
 	_ = this
 
 	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, LambdaParserRULE_array)
+	p.EnterRule(localctx, 10, FluxParserRULE_array)
 	var _la int
 
 	defer func() {
@@ -1442,13 +1442,13 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(101)
-		p.Match(LambdaParserT__7)
+		p.Match(FluxParserT__7)
 	}
 	p.SetState(110)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LambdaParserT__5)|(1<<LambdaParserT__7)|(1<<LambdaParserSTRING)|(1<<LambdaParserNUMBER)|(1<<LambdaParserBOOLEAN)|(1<<LambdaParserID))) != 0 {
+	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FluxParserT__5)|(1<<FluxParserT__7)|(1<<FluxParserSTRING)|(1<<FluxParserNUMBER)|(1<<FluxParserBOOLEAN)|(1<<FluxParserID))) != 0 {
 		{
 			p.SetState(102)
 			p.Value()
@@ -1457,10 +1457,10 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == LambdaParserT__3 {
+		for _la == FluxParserT__3 {
 			{
 				p.SetState(103)
-				p.Match(LambdaParserT__3)
+				p.Match(FluxParserT__3)
 			}
 			{
 				p.SetState(104)
@@ -1475,7 +1475,7 @@ func (p *LambdaParser) Array() (localctx IArrayContext) {
 	}
 	{
 		p.SetState(112)
-		p.Match(LambdaParserT__8)
+		p.Match(FluxParserT__8)
 	}
 
 	return localctx
@@ -1500,7 +1500,7 @@ type ValueContext struct {
 func NewEmptyValueContext() *ValueContext {
 	var p = new(ValueContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = LambdaParserRULE_value
+	p.RuleIndex = FluxParserRULE_value
 	return p
 }
 
@@ -1512,7 +1512,7 @@ func NewValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = LambdaParserRULE_value
+	p.RuleIndex = FluxParserRULE_value
 
 	return p
 }
@@ -1520,19 +1520,19 @@ func NewValueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 func (s *ValueContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ValueContext) STRING() antlr.TerminalNode {
-	return s.GetToken(LambdaParserSTRING, 0)
+	return s.GetToken(FluxParserSTRING, 0)
 }
 
 func (s *ValueContext) NUMBER() antlr.TerminalNode {
-	return s.GetToken(LambdaParserNUMBER, 0)
+	return s.GetToken(FluxParserNUMBER, 0)
 }
 
 func (s *ValueContext) BOOLEAN() antlr.TerminalNode {
-	return s.GetToken(LambdaParserBOOLEAN, 0)
+	return s.GetToken(FluxParserBOOLEAN, 0)
 }
 
 func (s *ValueContext) ID() antlr.TerminalNode {
-	return s.GetToken(LambdaParserID, 0)
+	return s.GetToken(FluxParserID, 0)
 }
 
 func (s *ValueContext) Obj() IObjContext {
@@ -1576,20 +1576,20 @@ func (s *ValueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.EnterValue(s)
 	}
 }
 
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(LambdaListener); ok {
+	if listenerT, ok := listener.(FluxListener); ok {
 		listenerT.ExitValue(s)
 	}
 }
 
 func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case LambdaVisitor:
+	case FluxVisitor:
 		return t.VisitValue(s)
 
 	default:
@@ -1597,12 +1597,12 @@ func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *LambdaParser) Value() (localctx IValueContext) {
+func (p *FluxParser) Value() (localctx IValueContext) {
 	this := p
 	_ = this
 
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, LambdaParserRULE_value)
+	p.EnterRule(localctx, 12, FluxParserRULE_value)
 
 	defer func() {
 		p.ExitRule()
@@ -1624,42 +1624,42 @@ func (p *LambdaParser) Value() (localctx IValueContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case LambdaParserSTRING:
+	case FluxParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(114)
-			p.Match(LambdaParserSTRING)
+			p.Match(FluxParserSTRING)
 		}
 
-	case LambdaParserNUMBER:
+	case FluxParserNUMBER:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(115)
-			p.Match(LambdaParserNUMBER)
+			p.Match(FluxParserNUMBER)
 		}
 
-	case LambdaParserBOOLEAN:
+	case FluxParserBOOLEAN:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(116)
-			p.Match(LambdaParserBOOLEAN)
+			p.Match(FluxParserBOOLEAN)
 		}
 
-	case LambdaParserID:
+	case FluxParserID:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(117)
-			p.Match(LambdaParserID)
+			p.Match(FluxParserID)
 		}
 
-	case LambdaParserT__5:
+	case FluxParserT__5:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(118)
 			p.Obj()
 		}
 
-	case LambdaParserT__7:
+	case FluxParserT__7:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(119)

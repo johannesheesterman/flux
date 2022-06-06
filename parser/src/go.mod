@@ -1,4 +1,4 @@
-module github.com/johannesheesterman/lambda/parser
+module github.com/johannesheesterman/flux/parser
 
 go 1.18
 
