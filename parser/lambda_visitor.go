@@ -1,10 +1,11 @@
-package main
+package parser
 
 import (
 	"strconv"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"github.com/johannesheesterman/lambda/parser"
+
+	"github.com/johannesheesterman/lambda/parser/lang"
 )
 
 var standardFunctions = map[string]func([]interface{}) interface{}{
@@ -13,7 +14,7 @@ var standardFunctions = map[string]func([]interface{}) interface{}{
 }
 
 type LambdaVisitor struct {
-	parser.BaseLambdaVisitor
+	lang.BaseLambdaVisitor
 	values map[string]interface{}
 }
 
@@ -25,42 +26,42 @@ func NewLambdaVistor() *LambdaVisitor {
 
 func (this *LambdaVisitor) Visit(tree antlr.Tree) {
 	switch t := tree.(type) {
-	case *parser.ProgContext:
+	case *lang.ProgContext:
 		this.VisitProg(t)
-	case *parser.AssignmentStatementContext:
+	case *lang.AssignmentStatementContext:
 		this.VisitAssignmentStatement(t)
-	case *parser.FunctionCallAssignmentStatementContext:
+	case *lang.FunctionCallAssignmentStatementContext:
 		this.VisitFunctionCallAssignmentStatement(t)
-	case *parser.FunctionCallStatementContext:
+	case *lang.FunctionCallStatementContext:
 		this.VisitFunctionCallStatement(t)
 	}
 }
 
-func (this *LambdaVisitor) VisitProg(ctx *parser.ProgContext) {
+func (this *LambdaVisitor) VisitProg(ctx *lang.ProgContext) {
 	for _, c := range ctx.GetChildren() {
 		this.Visit(c)
 	}
 }
 
-func (this *LambdaVisitor) VisitAssignmentStatement(ctx *parser.AssignmentStatementContext) {
+func (this *LambdaVisitor) VisitAssignmentStatement(ctx *lang.AssignmentStatementContext) {
 	name := ctx.ID().GetText()
 	value := ctx.Value()
-	this.values[name] = this.VisitValue(value.(*parser.ValueContext))
+	this.values[name] = this.VisitValue(value.(*lang.ValueContext))
 }
 
-func (this *LambdaVisitor) VisitFunctionCallAssignmentStatement(ctx *parser.FunctionCallAssignmentStatementContext) {
+func (this *LambdaVisitor) VisitFunctionCallAssignmentStatement(ctx *lang.FunctionCallAssignmentStatementContext) {
 	name := ctx.ID().GetText()
-	this.values[name] = this.VisitFunc(ctx.Func().(*parser.FuncContext))
+	this.values[name] = this.VisitFunc(ctx.Func().(*lang.FuncContext))
 }
 
-func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *parser.FunctionCallStatementContext) {
-	this.VisitFunc(ctx.Func().(*parser.FuncContext))
+func (this *LambdaVisitor) VisitFunctionCallStatement(ctx *lang.FunctionCallStatementContext) {
+	this.VisitFunc(ctx.Func().(*lang.FuncContext))
 }
 
-func (this *LambdaVisitor) VisitFunc(ctx *parser.FuncContext) interface{} {
+func (this *LambdaVisitor) VisitFunc(ctx *lang.FuncContext) interface{} {
 	args := make([]interface{}, len(ctx.AllValue()))
 	for i, c := range ctx.AllValue() {
-		args[i] = this.VisitValue(c.(*parser.ValueContext))
+		args[i] = this.VisitValue(c.(*lang.ValueContext))
 	}
 
 	functionName := ctx.KEY().GetText()
@@ -68,7 +69,7 @@ func (this *LambdaVisitor) VisitFunc(ctx *parser.FuncContext) interface{} {
 	return function(args)
 }
 
-func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
+func (this *LambdaVisitor) VisitValue(ctx *lang.ValueContext) interface{} {
 	if (ctx.STRING()) != nil {
 		return ctx.STRING().GetText()[1 : len(ctx.STRING().GetText())-1]
 	}
@@ -80,10 +81,10 @@ func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 		return ctx.BOOLEAN().GetText() == "true"
 	}
 	if (ctx.Array()) != nil {
-		return this.VisitArray(ctx.Array().(*parser.ArrayContext))
+		return this.VisitArray(ctx.Array().(*lang.ArrayContext))
 	}
 	if (ctx.Obj()) != nil {
-		return this.VisitObj(ctx.Obj().(*parser.ObjContext))
+		return this.VisitObj(ctx.Obj().(*lang.ObjContext))
 	}
 	if (ctx.ID()) != nil {
 		return this.values[ctx.ID().GetText()]
@@ -92,19 +93,19 @@ func (this *LambdaVisitor) VisitValue(ctx *parser.ValueContext) interface{} {
 	return nil
 }
 
-func (this *LambdaVisitor) VisitArray(ctx *parser.ArrayContext) []interface{} {
+func (this *LambdaVisitor) VisitArray(ctx *lang.ArrayContext) []interface{} {
 	var values []interface{}
 	for _, c := range ctx.AllValue() {
-		values = append(values, this.VisitValue(c.(*parser.ValueContext)))
+		values = append(values, this.VisitValue(c.(*lang.ValueContext)))
 	}
 	return values
 }
 
-func (this *LambdaVisitor) VisitObj(ctx *parser.ObjContext) map[string]interface{} {
+func (this *LambdaVisitor) VisitObj(ctx *lang.ObjContext) map[string]interface{} {
 	values := make(map[string]interface{})
 	for _, c := range ctx.AllPair() {
-		pair := c.(*parser.PairContext)
-		values[pair.KEY().GetText()] = this.VisitValue(pair.Value().(*parser.ValueContext))
+		pair := c.(*lang.PairContext)
+		values[pair.KEY().GetText()] = this.VisitValue(pair.Value().(*lang.ValueContext))
 	}
 	return values
 }

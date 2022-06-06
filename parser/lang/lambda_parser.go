@@ -1,6 +1,6 @@
 // Code generated from Lambda.g4 by ANTLR 4.10. DO NOT EDIT.
 
-package parser // Lambda
+package lang // Lambda
 
 import (
 	"fmt"
