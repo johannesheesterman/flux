@@ -1,5 +1,5 @@
 {
-  "name": "lambda-editor",
+	"name": "lambda-editor",
 	"displayName": "lambda-editor",
 	"description": "",
 	"version": "0.0.1",
@@ -10,14 +10,27 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:lambda-editor.helloWorld"
+		"onCommand:lambda-editor.openWithEditor",
+		"onCustomEditor:lambda-editor.editor"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "lambda-editor.editor",
+				"displayName": "Lambda Editor",
+				"selector": [
+					{
+						"filenamePattern": "*.lda"
+					}
+				],
+				"priority": "option"
+			}
+		],
 		"commands": [
 			{
-				"command": "lambda-editor.helloWorld",
-				"title": "Hello World"
+				"command": "lambda-editor.openWithEditor",
+				"title": "Lambda: Open with editor"
 			}
 		]
 	},
