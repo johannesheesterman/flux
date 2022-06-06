@@ -4,7 +4,6 @@ import (
 	"strconv"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-
 	"github.com/johannesheesterman/lambda/parser/lang"
 )
 
