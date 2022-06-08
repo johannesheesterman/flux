@@ -1,0 +1,8 @@
+[a] = 123.456
+[obj] = { 
+    id = "test"; 
+    number = 789;
+};
+
+Print("[a] = ", [a]);
+Print("[obj] = ", [obj]);
